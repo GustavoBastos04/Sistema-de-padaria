@@ -1,6 +1,10 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.4.0 Chrome/126.0.6478.234 Electron/31.4.0 Safari/537.36" modified="2024-10-22T16:51:28.614Z" version="24.3.1" etag="6cvjJRWL_yZJJ54cIs2Z" type="device">
   <diagram name="Página-1" id="vJEMWnyEoqHbHypD12Wy">
+<<<<<<< HEAD
     <mxGraphModel dx="2876" dy="2137" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+=======
+    <mxGraphModel dx="2587" dy="2359" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+>>>>>>> 1618333 (DER Mapping Created)
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -209,7 +213,11 @@
         <mxCell id="lzSm2pYTbfIAcmbfj_6p-31" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;tipo&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="568" y="301" width="160" height="50" as="geometry" />
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="lzSm2pYTbfIAcmbfj_6p-32" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="lzSm2pYTbfIAcmbfj_6p-8" target="lzSm2pYTbfIAcmbfj_6p-31" edge="1">
+=======
+        <mxCell id="lzSm2pYTbfIAcmbfj_6p-32" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="lzSm2pYTbfIAcmbfj_6p-8" target="lzSm2pYTbfIAcmbfj_6p-31" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="656" y="304.5" as="sourcePoint" />
             <mxPoint x="616" y="116.5" as="targetPoint" />
@@ -320,6 +328,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Gera&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="272.5" y="12.5" width="160" height="90" as="geometry" />
         </mxCell>
@@ -330,11 +339,21 @@
           <mxGeometry x="1039" y="667" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-12" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="KZcAOmHXJrTHvpEGFcvV-15" target="yXay3HCeMSwOIA3PywSB-10" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-1" target="2FXXEjFqD5Uwn6YSj8MS-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Gera&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="540" y="40" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-2" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-1" target="2FXXEjFqD5Uwn6YSj8MS-92" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1112" y="608" as="sourcePoint" />
             <mxPoint x="809" y="433" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-13" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;U&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="800" y="985" width="80" height="80" as="geometry" />
         </mxCell>
@@ -342,28 +361,63 @@
           <mxGeometry x="31" y="1178.5" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-17" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="2FXXEjFqD5Uwn6YSj8MS-2" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-7" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Quantidade&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1065" y="310" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-10" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Quantidade&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="620" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-12" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="KZcAOmHXJrTHvpEGFcvV-15" target="yXay3HCeMSwOIA3PywSB-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1050" y="790" as="sourcePoint" />
+            <mxPoint x="840" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-13" value="&lt;font style=&quot;font-size: 40px;&quot;&gt;U&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1181" y="1059" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-14" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Fornecedor&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-80" y="1100" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-17" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="2FXXEjFqD5Uwn6YSj8MS-2" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1080" y="755" as="sourcePoint" />
             <mxPoint x="770" y="770" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-18" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="KZcAOmHXJrTHvpEGFcvV-18" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-18" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="KZcAOmHXJrTHvpEGFcvV-18" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="1090" y="765" as="sourcePoint" />
             <mxPoint x="780" y="780" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-19" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Item-Estoque&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="760" y="1174" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-21" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="yXay3HCeMSwOIA3PywSB-19" edge="1">
+=======
+          <mxGeometry x="1141" y="1219" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-21" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-13" target="yXay3HCeMSwOIA3PywSB-19" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="962" y="1079" as="sourcePoint" />
             <mxPoint x="1289" y="1012" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-22" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Fornece&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="433" y="1166" width="190" height="100" as="geometry" />
+=======
+          <mxGeometry x="535" y="1229" width="190" height="100" as="geometry" />
+>>>>>>> 1618333 (DER Mapping Created)
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-23" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-22" target="yXay3HCeMSwOIA3PywSB-14" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -377,6 +431,7 @@
             <mxPoint x="835.5000000000005" y="1287.2500000000005" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-31" value="" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;rotation=-90;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
           <mxGeometry x="832.95" y="1109" width="14.1" height="67.47" as="geometry" />
         </mxCell>
@@ -384,12 +439,25 @@
           <mxGeometry x="463" y="1339" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-36" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-22" target="yXay3HCeMSwOIA3PywSB-35" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-31" value="" style="shape=dataStorage;whiteSpace=wrap;html=1;fixedSize=1;rotation=-90;" parent="1" vertex="1">
+          <mxGeometry x="1213.9" y="1139" width="14.1" height="67.47" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-35" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Quantidade&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="1399" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-36" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-22" target="yXay3HCeMSwOIA3PywSB-35" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="443" y="1226" as="sourcePoint" />
             <mxPoint x="526" y="1351" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-37" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-38" target="yXay3HCeMSwOIA3PywSB-22" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-37" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-38" target="yXay3HCeMSwOIA3PywSB-22" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="648" y="1336" as="sourcePoint" />
             <mxPoint x="492" y="1416" as="targetPoint" />
@@ -397,90 +465,164 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-38" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Preço&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="463" y="1028.75" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-39" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;&lt;u&gt;CNPJ&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-37" y="1011" width="190" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-40" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-39" edge="1">
+=======
+          <mxGeometry x="690" y="1389" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-39" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;&lt;u&gt;CNPJ&lt;/u&gt;&lt;/b&gt;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-200" y="1299" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-40" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-39" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="386" y="1318.5" as="sourcePoint" />
             <mxPoint x="201" y="1228.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-41" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Nome&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="148" y="1364" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-42" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-41" target="yXay3HCeMSwOIA3PywSB-14" edge="1">
+=======
+          <mxGeometry x="40" y="1270" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-42" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-41" target="yXay3HCeMSwOIA3PywSB-14" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="121" y="1268.5" as="sourcePoint" />
             <mxPoint x="16" y="1387.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-43" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Telefone&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry y="1369" width="130" height="70" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-44" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-43" edge="1">
+=======
+          <mxGeometry x="-300" y="1170" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-44" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-43" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="121" y="1268.5" as="sourcePoint" />
             <mxPoint x="16" y="1387.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-48" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,N)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="381" y="1169" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-49" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,M)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="609" y="1168.75" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-50" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-7" target="zRSC-BOtXgD7wjb17peZ-27" edge="1">
+=======
+          <mxGeometry x="480" y="1219" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-49" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,M)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="784" y="1249" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-50" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-7" target="zRSC-BOtXgD7wjb17peZ-27" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="855.5" y="399.5" as="sourcePoint" />
             <mxPoint x="883.5" y="431.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-52" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,N)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+<<<<<<< HEAD
           <mxGeometry x="227.5" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-53" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,M)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="412.5" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-66" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="9mkm8Evao_Wj6QGpfnNf-35" edge="1">
+=======
+          <mxGeometry x="470" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-53" value="&lt;font style=&quot;font-size: 26px;&quot;&gt;(1,M)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="680" y="27.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-65" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Endereço&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-360" y="1042.5" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-66" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-65" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="13" y="1198" as="sourcePoint" />
             <mxPoint x="-85" y="1224" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="yXay3HCeMSwOIA3PywSB-77" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;E-mail&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="158" y="1055" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yXay3HCeMSwOIA3PywSB-78" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-77" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-67" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Logradouro&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-400" y="832.5" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-68" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Número&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-440" y="882.5" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-69" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;CEP&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-415" y="962.5" width="75" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-70" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Cidade&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-500" y="1030" width="100" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-71" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;UF&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-450" y="1112.5" width="70" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-72" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-65" target="yXay3HCeMSwOIA3PywSB-67" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="41" y="1208.5" as="sourcePoint" />
             <mxPoint x="-109" y="1156.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="3GgnLy2EhP9ksLH0LWmX-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;u&gt;id_item&lt;/u&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1038" y="1189" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="3GgnLy2EhP9ksLH0LWmX-3" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-19" target="3GgnLy2EhP9ksLH0LWmX-1" edge="1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-73" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-65" target="yXay3HCeMSwOIA3PywSB-69" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="878.5" y="1020.25" as="sourcePoint" />
             <mxPoint x="1044.5" y="1267.25" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-6" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2FXXEjFqD5Uwn6YSj8MS-7" target="yXay3HCeMSwOIA3PywSB-1">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-74" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-65" target="yXay3HCeMSwOIA3PywSB-68" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="195" y="102" as="sourcePoint" />
             <mxPoint x="245" y="52" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-7" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yXay3HCeMSwOIA3PywSB-1" target="2FXXEjFqD5Uwn6YSj8MS-92">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-75" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-65" target="yXay3HCeMSwOIA3PywSB-70" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="556" y="105" as="sourcePoint" />
             <mxPoint x="850" y="110" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-35" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Endereço&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-209" y="1195" width="130" height="50" as="geometry" />
         </mxCell>
@@ -500,18 +642,29 @@
           <mxGeometry x="-294" y="1285" width="70" height="35" as="geometry" />
         </mxCell>
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-41" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9mkm8Evao_Wj6QGpfnNf-35" target="9mkm8Evao_Wj6QGpfnNf-36">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-76" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-65" target="yXay3HCeMSwOIA3PywSB-71" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="75" y="1285" as="sourcePoint" />
             <mxPoint x="34" y="1135" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-42" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9mkm8Evao_Wj6QGpfnNf-35" target="9mkm8Evao_Wj6QGpfnNf-38">
+=======
+        <mxCell id="yXay3HCeMSwOIA3PywSB-77" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;E-mail&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-150" y="940" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yXay3HCeMSwOIA3PywSB-78" value="" style="endArrow=none;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yXay3HCeMSwOIA3PywSB-14" target="yXay3HCeMSwOIA3PywSB-77" edge="1">
+>>>>>>> 1618333 (DER Mapping Created)
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-44" y="1212" as="sourcePoint" />
             <mxPoint x="-130" y="1035" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+<<<<<<< HEAD
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-43" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9mkm8Evao_Wj6QGpfnNf-35" target="9mkm8Evao_Wj6QGpfnNf-37">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-34" y="1222" as="sourcePoint" />
@@ -659,6 +812,17 @@
         <mxCell id="9mkm8Evao_Wj6QGpfnNf-97" value="" style="shape=stencil(lVZJcttADHwNrygss2DOjvMPV1mOWFEklyxn+X3AMGSEEYWKb6MRmmgsDcwgD2/7p9fdwPh2OZ++7n6Mz5f9IJ8G5vG4353Hi50GeRzk4eV03n05n96Pz/Pv16fJcjp9O32fvvBzxnEBqhOK8dd8ow2E/9x8ngGH8XgFQEB09qVCzvftUwH1DhC03bcvCJU7e8L79jUBNWfPUAJ7zT0fBaL79i1BTs6eCmANAA1YPaEMJYWAQg4gxjEoQcuQvIeUF5LbMVcQcYAsUDVIqoXoKWUjGVWN+6rZTRR0UlDpAX9JbgKmnHSUNIzBst7HYB6CwpE1su+MFGeJErAHiIS9TVa47FvDPARZst5vvrnNZwq6VRDEB23yK0EZGJIvA4EGIWdrDN966zzY7osG2qkn5K/cpzRDi8TGgD6jJMABoWZq79RpXRGUgPBm4smatG0XN2qbshzpGSH5JGUCDqqmRqn0WsCAks3obiaZ2jCowwRoHwKkvjE4lqfqEuKVPKNB3+QmS7r43AYUyJ0WEmjkwQrnK10pVI8N4upjqBoDaOnmdflkkChLN+vZPoHBujUCxRfOSOaoNRo0ryCTSA4o2YLuts+VRLaHBi7rbHXRlnWxPZVoobwC6pLp7bEnQF0QNpsDDx9+9vwHwA7/Xlkv4+EwP9Ku/+9fZXY1v+jk8Tc=);lineShape=1;strokeColor=default;" vertex="1" parent="1">
           <mxGeometry x="1079.4762078903545" y="892.2926374966096" width="7.906749645410924" height="10.791590879941324" as="geometry" />
         </mxCell>
+=======
+        <mxCell id="3GgnLy2EhP9ksLH0LWmX-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;u&gt;id_item&lt;/u&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="1217" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="3GgnLy2EhP9ksLH0LWmX-3" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="yXay3HCeMSwOIA3PywSB-19" target="3GgnLy2EhP9ksLH0LWmX-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1254" y="995" as="sourcePoint" />
+            <mxPoint x="1304" y="945" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+>>>>>>> 1618333 (DER Mapping Created)
       </root>
     </mxGraphModel>
   </diagram>
