@@ -1,8 +1,0 @@
-create table Cliente (
-	cpf varchar not null, 
-	telefone varchar,
-	email  varchar,
-	nome varchar not null,
-	tipo_de_assinatura varchar not null,
-	logradouro varchar,
-);
