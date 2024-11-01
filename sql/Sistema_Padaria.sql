@@ -30,7 +30,9 @@ CREATE TABLE produto (
     valor NUMERIC(5,2) NOT NULL,
     quantidade INT NOT NULL,
     estoque_id_item INT NOT NULL,
-    FOREIGN KEY (estoque_id_item) REFERENCES Padaria.item_estoque(id_item)
+    cliente_cpf VARCHAR NOT NULL,
+    FOREIGN KEY (estoque_id_item) REFERENCES Padaria.item_estoque(id_item),
+    FOREIGN KEY (cliente_cpf) REFERENCES Padaria.cliente(cpf)
 );
 
 CREATE TABLE ingrediente (
@@ -49,9 +51,7 @@ CREATE TABLE cliente (
     numero VARCHAR NOT NULL,
     cep VARCHAR NOT NULL,
     cidade VARCHAR NOT NULL,
-    uf VARCHAR NOT NULL,
-    produto_id_produto INT NOT NULL,
-    FOREIGN KEY (produto_id_produto) REFERENCES Padaria.produto(id_produto)
+    uf VARCHAR NOT NULL
 );
 
 CREATE TABLE pagamento (
