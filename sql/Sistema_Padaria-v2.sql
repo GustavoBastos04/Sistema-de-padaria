@@ -51,9 +51,8 @@ CREATE TABLE produto (
     valor NUMERIC(5,2) NOT NULL,
     quantidade INT NOT NULL,
     estoque_id_item INT NOT NULL,
-    cliente_cpf VARCHAR NOT NULL,
+    cliente_cpf VARCHAR,
     FOREIGN KEY (estoque_id_item) REFERENCES item_estoque(id_item),
-    FOREIGN KEY (cliente_cpf) REFERENCES cliente(cpf)
 ); 
 
 CREATE TABLE pagamento (
