@@ -11,7 +11,7 @@ import java.util.List;
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM cliente;")
-    List<Cliente> findAllClientData();
+    List<Cliente> getClientes();
 
     @Query(nativeQuery = true, value =
             "SELECT * FROM cliente where cliente.tipo_de_assinatura = :tipo_de_assinatura")
