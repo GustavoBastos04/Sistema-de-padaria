@@ -18,6 +18,7 @@ ItemFornecedor.propTypes = {
     tel: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     cep: PropTypes.string.isRequired,
+    flag: PropTypes.number.isRequired
 }
 
 export default ItemFornecedor;

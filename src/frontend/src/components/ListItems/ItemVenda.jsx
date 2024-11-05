@@ -11,9 +11,10 @@ function ItemVenda(props){
 }
 
 ItemVenda.propTypes = {
-    id_venda: PropTypes.string.isRequired,
-    valor: PropTypes.string.isRequired,
+    id_venda: PropTypes.number.isRequired,
+    valor: PropTypes.number.isRequired,
     data: PropTypes.string.isRequired,
+    flag: PropTypes.number.isRequired
 }
 
 export default ItemVenda;

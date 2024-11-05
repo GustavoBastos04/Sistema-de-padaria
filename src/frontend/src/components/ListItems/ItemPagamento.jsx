@@ -12,6 +12,7 @@ function ItemPagamento(props){
 ItemPagamento.propTypes = {
     cpf_cliente: PropTypes.string.isRequired,
     forma: PropTypes.string.isRequired,
+    flag: PropTypes.number.isRequired
 }
 
 export default ItemPagamento;

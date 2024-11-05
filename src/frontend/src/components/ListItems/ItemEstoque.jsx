@@ -12,8 +12,9 @@ function ItemEstoque(props){
 
 ItemEstoque.propTypes = {
     nome: PropTypes.string.isRequired,
-    valor: PropTypes.string.isRequired,
-    quantidade: PropTypes.string.isRequired,
+    valor: PropTypes.number.isRequired,
+    quantidade: PropTypes.number.isRequired,
+    flag: PropTypes.number.isRequired
 }
 
 export default ItemEstoque;

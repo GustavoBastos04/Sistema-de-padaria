@@ -1,3 +1,4 @@
+import {Button} from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function ItemProduto(props){
@@ -7,9 +8,15 @@ function ItemProduto(props){
             <td>{props.valor}</td>
             <td>{props.quantidade}</td>
             <td className="text-end">
-                {props.action1}
-                {props.action2}
-                {props.action3}
+                {
+                    props.flag === 1 && (
+                            <>
+                                <Button variant="success" className="m-1">Visualizar lucro</Button>
+                                <Button variant="primary" className="m-1">Editar produto</Button>    
+                                <Button variant="danger" className="m-1">Remover produto</Button>
+                            </>
+                    )
+                }
             </td>
         </tr>
     )
@@ -17,11 +24,9 @@ function ItemProduto(props){
 
 ItemProduto.propTypes = {
     nome: PropTypes.string.isRequired,
-    valor: PropTypes.string.isRequired,
-    quantidade: PropTypes.string.isRequired,
-    action1: PropTypes.element.isRequired,
-    action2: PropTypes.element.isRequired,
-    action3: PropTypes.element.isRequired,
+    valor: PropTypes.number.isRequired,
+    quantidade: PropTypes.number.isRequired,
+    flag: PropTypes.number.isRequired
 }
 
 export default ItemProduto;
