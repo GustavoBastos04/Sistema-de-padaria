@@ -1,23 +1,28 @@
 SET search_path TO Padaria, public;
 
-
 -- Desconto para Cliente Cadastrado
 SELECT 
-	c.nome,
-	c.cpf,
--- desconto de 10%
-	SUM(v.valor) as total_gasto,		-- mostra o total gasto antes do desconto
-	SUM(v.valor) * 0.10 as desconto,	-- mostra qual será o desconto
-	SUM(v.valor) - SUM(v.valor)* 0.10 as total_com_desconto	-- valor final após o desconto
+    c.nome,
+    c.cpf,
+    SUM(v.valor) AS total_gasto,                            -- mostra o total gasto antes do desconto
+    CASE 
+        WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- desconto de 10% para clientes Premium
+        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- desconto de 5% para clientes Basic
+        ELSE 0                                                          -- sem desconto para outros tipos
+    END AS desconto, 
+    SUM(v.valor) - CASE 
+        WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- valor final após desconto de 10% para Premium
+        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- valor final após desconto de 5% para Basic
+        ELSE 0                                                          -- sem desconto para outros tipos
+    END AS total_com_desconto
 FROM
-	cliente as c
+    cliente AS c
 JOIN
--- chamado apenas para ligar cliente com venda
-	cliente_gera_venda as cv on c.cpf = cv.cliente_cpf
+    cliente_gera_venda AS cv ON c.cpf = cv.cliente_cpf
 JOIN
-	venda as v on cv.venda_id_venda = v.id_venda
+    venda AS v ON cv.venda_id_venda = v.id_venda
 GROUP BY
-	c.cpf, c.nome;
+    c.cpf, c.nome;
 
 
 -- Lucro Geral por Venda
