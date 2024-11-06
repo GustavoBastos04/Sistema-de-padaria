@@ -43,6 +43,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, String> {
         GROUP BY
             c.cpf, c.nome
         """)
-    List<ClienteDescontoDTO> findClientesComDesconto();
+    List<Cliente> findClientesComDesconto();
 }
 

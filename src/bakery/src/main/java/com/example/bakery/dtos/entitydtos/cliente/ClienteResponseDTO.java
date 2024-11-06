@@ -1,4 +1,4 @@
-package com.example.bakery.dtos.cliente;
+package com.example.bakery.dtos.entitydtos.cliente;
 
 import com.example.bakery.entities.Cliente;
 

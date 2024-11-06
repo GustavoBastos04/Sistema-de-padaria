@@ -1,4 +1,4 @@
-package com.example.bakery.dtos;
+package com.example.bakery.dtos.entitydtos;
 
 import com.example.bakery.entities.Ingrediente;
 

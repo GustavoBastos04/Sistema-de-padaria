@@ -1,4 +1,4 @@
-package com.example.bakery.dtos.fornecedor;
+package com.example.bakery.dtos.entitydtos.fornecedor;
 
 import com.example.bakery.entities.Fornecedor;
 

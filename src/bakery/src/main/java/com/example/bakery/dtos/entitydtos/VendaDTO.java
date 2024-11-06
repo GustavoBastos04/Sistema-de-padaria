@@ -1,6 +1,5 @@
-package com.example.bakery.dtos;
+package com.example.bakery.dtos.entitydtos;
 
-import com.example.bakery.entities.Cliente;
 import com.example.bakery.entities.Venda;
 
 import java.math.BigDecimal;

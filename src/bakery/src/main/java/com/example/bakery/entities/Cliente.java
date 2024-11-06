@@ -1,6 +1,6 @@
 package com.example.bakery.entities;
 
-import com.example.bakery.dtos.cliente.ClienteRequestDTO;
+import com.example.bakery.dtos.entitydtos.cliente.ClienteRequestDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;

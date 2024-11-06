@@ -1,6 +1,6 @@
 package com.example.bakery.entities;
 
-import com.example.bakery.dtos.VendaDTO;
+import com.example.bakery.dtos.entitydtos.VendaDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

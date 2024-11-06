@@ -1,4 +1,4 @@
-package com.example.bakery.dtos.fornecedor;
+package com.example.bakery.dtos.entitydtos.fornecedor;
 
 public record FornecedorRequestDTO(String cnpj,String nome,
                                    String telefone, String email, String logradouro,

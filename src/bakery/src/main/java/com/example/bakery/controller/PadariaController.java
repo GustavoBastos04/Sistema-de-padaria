@@ -1,10 +1,10 @@
 package com.example.bakery.controller;
 
-import com.example.bakery.dtos.*;
-import com.example.bakery.dtos.cliente.ClienteRequestDTO;
-import com.example.bakery.dtos.cliente.ClienteResponseDTO;
-import com.example.bakery.dtos.fornecedor.FornecedorRequestDTO;
-import com.example.bakery.dtos.fornecedor.FornecedorResponseDTO;
+import com.example.bakery.dtos.entitydtos.*;
+import com.example.bakery.dtos.entitydtos.cliente.ClienteRequestDTO;
+import com.example.bakery.dtos.entitydtos.cliente.ClienteResponseDTO;
+import com.example.bakery.dtos.entitydtos.fornecedor.FornecedorRequestDTO;
+import com.example.bakery.dtos.entitydtos.fornecedor.FornecedorResponseDTO;
 import com.example.bakery.entities.*;
 import com.example.bakery.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,4 +106,22 @@ public class PadariaController {
         produtoRepository.save(produtoData);
         return;
     }
+
+    // PAGAMENTO
+    @Autowired
+    PagamentoRepository pagamentoRepository;
+    @GetMapping("pagamento")
+    public List<PagamentoDTO> getPagamentos(){
+        List<PagamentoDTO> pagamentoList = pagamentoRepository.getPagamentos().stream().map(PagamentoDTO::new).toList();
+        return pagamentoList;
+    }
+    @PostMapping("pagamento")
+    public void savePagamento(@RequestBody PagamentoDTO newPagamento){
+        Pagamento pagamentoData = new Pagamento(newPagamento);
+        pagamentoRepository.save(pagamentoData);
+        return;
+    }
+
+    // RELACIONAMENTO PRODUTO-CONSTITUIDO-INGREDIENTE
+
 }
