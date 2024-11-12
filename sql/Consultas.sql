@@ -7,12 +7,12 @@ SELECT
     SUM(v.valor) AS total_gasto,                            -- mostra o total gasto antes do desconto
     CASE 
         WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- desconto de 10% para clientes Premium
-        WHEN c.tipo_de_assinatura = 'Basico' THEN SUM(v.valor) * 0.05    -- desconto de 5% para clientes Basic
+        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- desconto de 5% para clientes Basic
         ELSE 0                                                          -- sem desconto para outros tipos
     END AS desconto, 
     SUM(v.valor) - CASE 
         WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- valor final após desconto de 10% para Premium
-        WHEN c.tipo_de_assinatura = 'Basico' THEN SUM(v.valor) * 0.05    -- valor final após desconto de 5% para Basic
+        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- valor final após desconto de 5% para Basic
         ELSE 0                                                          -- sem desconto para outros tipos
     END AS total_com_desconto
 FROM
@@ -149,6 +149,14 @@ BEGIN
     LEFT JOIN
         CustoVenda as cv on rep.id_venda = cv.venda_id_venda';
 END $$;
+
+-- Relatorio de meios de pagamento
+-- Quantidade de vendas por tipo de pagamento e valor total das vendas
+SELECT p.tipo, count(p.tipo) AS qtd_vendas, Sum(v.valor) AS valor_total
+FROM Padaria.pagamento AS p, Padaria.venda AS v
+WHERE p.venda_id_venda = v.id_venda  
+GROUP BY p.tipo
+ORDER BY valor_total DESC;
 
 
 
