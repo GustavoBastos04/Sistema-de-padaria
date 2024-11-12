@@ -14,10 +14,8 @@ function CadastroCliente() {
                         <Form.Control type="text" as={InputMask} mask="999.999.999-99" placeholder="123.456.789-00" required/>
                         <Form.Label className="mt-3"> Tipo de assinatura <span className="required-field">*</span> </Form.Label>
                         <Form.Select>
-                        <option value="1">Plano A</option>
-                            <option value="2">Plano A+</option>
-                            <option value="3">Plano A++</option>
-                            <option value="4">Plano A+++</option>
+                        <option value="1">Basic</option>
+                            <option value="2">Premium</option>
                         </Form.Select>
                         <Form.Label className="mt-3"> Telefone <span className="required-field">*</span> </Form.Label>
                         <Form.Control type="text" as={InputMask} mask="(99) 99999-9999" placeholder="(11) 91111-1111" required/>
