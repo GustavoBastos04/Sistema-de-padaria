@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import {Button} from "react-bootstrap";
 
 function CadastroProduto() {
+    
     const [ingredientIds, setIngredientIds] = useState([""]); // Estado para armazenar os IDs dos ingredientes
 
     const handleChange = (index, event) => {
@@ -32,7 +33,9 @@ function CadastroProduto() {
                         <Form.Control type="number" placeholder="R$2.50" required/>
                         <Form.Label className="mt-3"> Quantidade <span className="required-field">*</span> </Form.Label>
                         <Form.Control type="number" placeholder="123" required/>
-                        <Form.Label className="mt-3">IDs dos Ingredientes </Form.Label>
+                        <Form.Label className="mt-3"> ID do fornecedor <span className="required-field">*</span> </Form.Label>
+                        <Form.Control type="text" placeholder="321" required/>
+                        <Form.Label className="mt-3">IDs dos ingredientes </Form.Label>
                         {ingredientIds.map((id, index) => (
                             <div key={index} className="d-flex align-items-center mb-1">
                                 <Form.Control
