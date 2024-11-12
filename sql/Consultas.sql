@@ -150,6 +150,14 @@ BEGIN
         CustoVenda as cv on rep.id_venda = cv.venda_id_venda';
 END $$;
 
+-- Relatorio de meios de pagamento
+-- Quantidade de vendas por tipo de pagamento e valor total das vendas
+SELECT p.tipo, count(p.tipo) AS qtd_vendas, Sum(v.valor) AS valor_total
+FROM Padaria.pagamento AS p, Padaria.venda AS v
+WHERE p.venda_id_venda = v.id_venda  
+GROUP BY p.tipo
+ORDER BY valor_total DESC;
+
 
 
 
