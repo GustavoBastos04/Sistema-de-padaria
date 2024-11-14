@@ -40,18 +40,18 @@ GROUP BY
 -- Lucro Geral por Venda
 WITH CustoVenda as (
     SELECT 
-        iv.venda_id_venda,
+        iv.id_venda,
         SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
     FROM 
         item_venda as iv
     JOIN 
-        produto_constituido_ingrediente as pci on iv.produto_id_produto = pci.produto_id_produto
+        produto_constituido_ingrediente as pci on iv.id_produto = pci.id_produto
     JOIN 
-        ingrediente as i on pci.ingrediente_id_ingrediente = i.id_ingrediente
+        ingrediente as i on pci.id_ingrediente = i.id_ingrediente
     JOIN 
-        fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
+        fornece_ingrediente as fie on i.id_ingrediente = fie.id_ingrediente
     GROUP BY 
-        iv.venda_id_venda
+        iv.id_venda
 )
 SELECT 
     v.id_venda,
@@ -62,32 +62,32 @@ SELECT
 FROM 
     venda as v
 LEFT JOIN 
-    CustoVenda as cv on v.id_venda = cv.venda_id_venda;
+    CustoVenda as cv on v.id_venda = cv.id_venda;
 
 
 -- Lucro por Produto
 WITH CustoProduto as (
     SELECT 
-        pci.produto_id_produto,
+        pci.id_produto,
         SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
     FROM 
         produto_constituido_ingrediente as pci
     JOIN 
-        ingrediente as i on pci.ingrediente_id_ingrediente = i.id_ingrediente
+        ingrediente as i on pci.id_ingrediente = i.id_ingrediente
     JOIN 
         fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
     GROUP BY 
-        pci.produto_id_produto
+        pci.id_produto
 ), ReceitaProduto as (
     SELECT 
-        iv.produto_id_produto,
+        iv.id_produto,
         SUM(v.valor) as receita_total
     FROM 
         venda as v
     JOIN 
-        item_venda as iv on v.id_venda = iv.venda_id_venda
+        item_venda as iv on v.id_venda = iv.id_venda
     GROUP BY 
-        iv.produto_id_produto
+        iv.id_produto
 )
 SELECT 
     p.id_produto,
@@ -98,9 +98,9 @@ SELECT
 FROM 
     ReceitaProduto as rp
 JOIN 
-    Padaria.produto as p on rp.produto_id_produto = p.id_produto
+    Padaria.produto as p on rp.id_produto = p.id_produto
 LEFT JOIN 
-    CustoProduto as cp on rp.produto_id_produto = cp.produto_id_produto;
+    CustoProduto as cp on rp.id_produto = cp.id_produto;
 
 
 --v.data_de_venda BETWEEN '2024-12-01' AND '2024-12-12'
@@ -119,13 +119,13 @@ BEGIN
         FROM 
             Padaria.item_venda as iv
         JOIN 
-            Padaria.produto_constituido_ingrediente as pci on iv.produto_id_produto = pci.produto_id_produto
+            Padaria.produto_constituido_ingrediente as pci on iv.id_produto = pci.id_produto
         JOIN 
-            Padaria.ingrediente as i on pci.ingrediente_id_ingrediente = i.id_ingrediente
+            Padaria.ingrediente as i on pci.id_ingrediente = i.id_ingrediente
         JOIN 
             Padaria.fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
         GROUP BY 
-            iv.venda_id_venda
+            iv.id_venda
     ), Receita_Periodo as (
         SELECT
             v.id_venda,
@@ -147,19 +147,34 @@ BEGIN
     FROM
         Receita_Periodo as rep
     LEFT JOIN
-        CustoVenda as cv on rep.id_venda = cv.venda_id_venda';
+        CustoVenda as cv on rep.id_venda = cv.id_venda';
 END $$;
 
 -- Relatorio de meios de pagamento
 -- Quantidade de vendas por tipo de pagamento e valor total das vendas
 SELECT p.tipo, count(p.tipo) AS qtd_vendas, Sum(v.valor) AS valor_total
 FROM Padaria.pagamento AS p, Padaria.venda AS v
-WHERE p.venda_id_venda = v.id_venda  
+WHERE p.id_venda = v.id_venda  
 GROUP BY p.tipo
 ORDER BY valor_total DESC;
 
+-- Estoque
+SELECT i.nome, i.fabricante, e.quantidade
+FROM Padaria.estoque AS e, Padaria.ingrediente AS i
+WHERE e.id_ingrediente = i.id_ingrediente;
 
+-- Produtos que restaram do dia anterior
+SELECT p.nome, pr.quantidade
+FROM padaria.produtos_restantes pr, padaria.produto p 
+WHERE pr.id_produto = p.id_produto;
 
+-- Estoque atual de ingredientes :
+-- Altereções da tabela estoque:
+-- Aumento da quantidade, diariamente aumenta usando update
+-- Diminuição diária por meio das vendas
+SELECT i.nome, e.quantidade
+FROM padaria.estoque e, padaria.ingrediente i 
+WHERE e.id_ingrediente = i.id_ingrediente ;
 
 
 
