@@ -14,10 +14,12 @@ import lombok.*;
 public class Ingrediente {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_ingrediente;
+    private String nome;
     private Long estoque_id_item;
 
     public Ingrediente(IngredienteDTO ingrediente){
         this.id_ingrediente = ingrediente.id_ingrediente();
+        this.nome = ingrediente.nome();
         this.estoque_id_item = ingrediente.estoque_id_item();
     }
 }

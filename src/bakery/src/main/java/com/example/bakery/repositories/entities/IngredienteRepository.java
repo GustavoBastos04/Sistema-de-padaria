@@ -1,4 +1,4 @@
-package com.example.bakery.repositories;
+package com.example.bakery.repositories.entities;
 
 import com.example.bakery.entities.Ingrediente;
 import org.springframework.data.jpa.repository.JpaRepository;
