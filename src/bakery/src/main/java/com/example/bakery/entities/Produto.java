@@ -19,14 +19,10 @@ public class Produto {
     private Long id_produto;
     private String nome;
     private BigDecimal valor;
-    private Long quantidade;
-    private Long estoque_id_item;
 
     public Produto(ProdutoDTO produto){
         this.id_produto = produto.id_produto();
         this.nome = produto.nome();
         this.valor = produto.valor();
-        this.quantidade = produto.quantidade();
-        this.estoque_id_item = produto.estoque_id_item();
     }
 }

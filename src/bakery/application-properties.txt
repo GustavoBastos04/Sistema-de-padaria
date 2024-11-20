@@ -3,5 +3,4 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 spring.datasource.url=jdbc:postgresql://localhost:5432/padaria
 spring.datasource.username=postgres
 # Remember to change according to your setup
-spring.datasource.password=familia4G@
-
+spring.datasource.password={senha-do-postgres}
