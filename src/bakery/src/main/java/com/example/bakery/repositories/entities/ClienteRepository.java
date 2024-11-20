@@ -21,18 +21,18 @@ public interface ClienteRepository extends JpaRepository<Cliente, String> {
 
     @Query(nativeQuery = true, value= """
 -- Desconto para Cliente Cadastrado
-SELECT
+SELECT 
     c.nome,
     c.cpf,
-    SUM(v.valor) AS total_gasto,                            -- mostra o total gasto antes do desconto
-    CASE
-        WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- desconto de 10% para clientes Premium
-        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- desconto de 5% para clientes Basic
+    ROUND(COALESCE(SUM(v.valor),0),2) AS total_gasto,                            -- mostra o total gasto antes do desconto
+    CASE 
+        WHEN c.tipo_de_assinatura = 'Premium' THEN COALESCE(SUM(v.valor), 0) * 0.10  -- desconto de 10% para clientes Premium
+        WHEN c.tipo_de_assinatura = 'Basic' THEN COALESCE(SUM(v.valor), 0) * 0.05    -- desconto de 5% para clientes Basic
         ELSE 0                                                          -- sem desconto para outros tipos
-    END AS desconto,
-    SUM(v.valor) - CASE
-        WHEN c.tipo_de_assinatura = 'Premium' THEN SUM(v.valor) * 0.10  -- valor final após desconto de 10% para Premium
-        WHEN c.tipo_de_assinatura = 'Basic' THEN SUM(v.valor) * 0.05    -- valor final após desconto de 5% para Basic
+    END AS desconto, 
+    ROUND(COALESCE(SUM(v.valor),0),2) - CASE 
+        WHEN c.tipo_de_assinatura = 'Premium' THEN COALESCE(SUM(v.valor), 0) * 0.10  -- valor final após desconto de 10% para Premium
+        WHEN c.tipo_de_assinatura = 'Basic' THEN COALESCE(SUM(v.valor), 0) * 0.05    -- valor final após desconto de 5% para Basic
         ELSE 0                                                          -- sem desconto para outros tipos
     END AS total_com_desconto
 FROM
@@ -42,7 +42,8 @@ JOIN
 JOIN
     venda AS v ON cv.venda_id_venda = v.id_venda
 GROUP BY
-    c.cpf, c.nome;""")
+    c.cpf, c.nome;
+""")
     List<DescontoClienteDTO> getDescontoCliente();
 }
 
