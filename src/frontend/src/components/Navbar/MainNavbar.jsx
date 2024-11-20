@@ -16,6 +16,7 @@ function MainNavbar() {
                         <Nav.Link as={Link} to="/">Nova venda</Nav.Link>
                         <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                         <Nav.Link as={Link} to="/estoque">Estoque</Nav.Link>
+                        <Nav.Link as={Link} to="/clientes">Clientes</Nav.Link>
                         <Nav.Link as={Link} to="/fornecedores">Fornecedores</Nav.Link>
                         <NavDropdown title="Históricos" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/vendas">Histórico de vendas</NavDropdown.Item>
