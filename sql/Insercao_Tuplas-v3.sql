@@ -1,7 +1,7 @@
-SET search_path TO Padaria, public;
+SET search_path TO padaria, public;
 
 -- Inserções de Vendas para a Tabela Padaria.venda
-INSERT INTO Padaria.venda (id_venda, valor) VALUES 
+INSERT INTO padaria.venda (id_venda, valor) VALUES 
 (1,35.50),
 (2,22.75),
 (3,47.30),
@@ -24,7 +24,7 @@ INSERT INTO Padaria.venda (id_venda, valor) VALUES
 (20,67.50);
 
 -- Inserções de Fornecedores para a Tabela Padaria.fornecedor
-INSERT INTO Padaria.fornecedor VALUES 
+INSERT INTO padaria.fornecedor VALUES 
 ('12.345.678/0001-90', 'Farinha & Cia Ltda', '(11) 3456-7890', 'contato@farinhaecia.com.br', 'Rua das Indústrias', '250', '04500-123', 'São Paulo', 'SP'),
 ('23.456.789/0001-81', 'Padaria Ingredientes Atacado', '(21) 2345-6789', 'vendas@padariainsumos.com.br', 'Avenida Brasil', '750', '21050-200', 'Rio de Janeiro', 'RJ'),
 ('34.567.890/0001-72', 'Doces e Massas Distribuidora', '(31) 3456-7890', 'comercial@docesmassas.com.br', 'Rua Minas Gerais', '480', '30190-120', 'Belo Horizonte', 'MG'),
@@ -90,7 +90,7 @@ INSERT INTO Padaria.item_estoque VALUES
 (40);
 
 -- Inserções de Produtos para a Tabela Padaria.produto
-INSERT INTO Padaria.produto  VALUES 
+INSERT INTO padaria.produto  VALUES 
 (1,'Pão Francês', 0.75, 100, 1),
 (2,'Pão de Leite', 8.50, 30, 2),
 (3,'Croissant', 5.90, 25, 3),
@@ -136,7 +136,7 @@ INSERT INTO Padaria.ingrediente VALUES
 (20,40, 'Canela em Pó'); 
 
 -- Inserções de Clientes para a Tabela Padaria.cliente
-INSERT INTO Padaria.cliente VALUES 
+INSERT INTO padaria.cliente VALUES 
 ('123.456.789-01', 'Maria Silva Santos', 'Premium', '(11) 98765-4321', 'maria.santos@email.com', 'Rua das Flores', '150', '04500-123', 'São Paulo', 'SP'),
 ('987.654.321-09', 'João Pedro Oliveira', 'Basic', '(21) 97654-3210', 'joao.oliveira@email.com', 'Avenida Central', '85', '22640-100', 'Rio de Janeiro', 'RJ'),
 ('456.789.123-45', 'Ana Beatriz Rocha', 'Premium', '(31) 96543-2109', 'ana.rocha@email.com', 'Travessa do Comércio', '42', '30190-120', 'Belo Horizonte', 'MG'),
@@ -182,7 +182,7 @@ INSERT INTO Padaria.pagamento VALUES
 ('321.654.210-98', 'PIX', 20);
 
 -- Inserções de Produto_Constituido_Ingrediente
-INSERT INTO Padaria.produto_constituido_ingrediente VALUES 
+INSERT INTO padaria.produto_constituido_ingrediente VALUES 
 -- Pão Francês (id: 1)
 (1, 1, 1000),  -- Farinha de Trigo: 1kg
 (1, 2, 30),    -- Fermento: 30g
@@ -248,7 +248,7 @@ INSERT INTO Padaria.produto_constituido_ingrediente VALUES
 (10, 8, 50);   -- Chocolate em Pó: 50g
 
 -- Inserções de Fornece_Item_Estoque
-INSERT INTO Padaria.fornece_item_estoque VALUES 
+INSERT INTO padaria.fornece_item_estoque VALUES 
 -- Farinha & Cia Ltda
 ('12.345.678/0001-90', 21, 500, 89.90),   -- Farinha de Trigo: 500kg
 ('12.345.678/0001-90', 35, 200, 129.90), -- Farinha Integral: 200kg
@@ -284,7 +284,7 @@ INSERT INTO Padaria.fornece_item_estoque VALUES
 ('89.012.345/0001-27', 30, 150, 299.90); -- Queijo: 150kg
 
 -- Inserções de Cliente_Gera_Venda
-INSERT INTO Padaria.cliente_gera_venda VALUES 
+INSERT INTO padaria.cliente_gera_venda VALUES 
 ('123.456.789-01', 1),  -- Maria Silva Santos - Venda de R$ 35,50
 ('987.654.321-09', 2),  -- João Pedro Oliveira - Venda de R$ 22,75
 ('456.789.123-45', 3),  -- Ana Beatriz Rocha - Venda de R$ 47,30

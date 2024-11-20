@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 SET search_path TO padaria;
+=======
+SET search_path TO padaria, public;
+>>>>>>> Stashed changes
 
 -- Desconto para Cliente Cadastrado
 -- Adcionei COALESCENCE para evitar valores nulos
