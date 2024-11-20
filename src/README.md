@@ -10,7 +10,9 @@
 <ul>
 <li>cliente [GET][POST]</li>
 <li>fornecedor [GET][POST]</li>
+<li>fornece-item-estoque [GET][POST]</li>
 <li>ingrediente [GET][POST]</li>
+<li>item_de_estoque [GET][POST]</li>
 <li>pagamento [GET][POST]</li>
 <li>produto-constituido-ingrediente [GET][POST]</li>
 <li>produto [GET][POST]</li>

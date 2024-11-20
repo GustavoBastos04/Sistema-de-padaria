@@ -25,3 +25,43 @@ Sistema de padaria que registra assinaturas de clientes (que permitem descontos 
 
 ## ✏️ Requisito de dados: 
 Uma padaria quer construir um sistema para armazenar informações pertinentes para melhorar os processos do negócio e a lucratividade. O cliente cadastrado no sistema da padaria possui o atributo de CPF como principal identificador, além do seu nome, número de telefone, e-mail e a informação composta de seu endereço. Esse cliente compra um produto, que possui um identificador único, nome, valor unitário e quantidade disponível nas prateleiras do estabelecimento. O produto consome os ingredientes estocados, dados por um identificador único, nome, quantidade disponível, valor unitário, validade e marca. O produto é constituído por ingredientes de uma receita, com a quantidade de cada produto. O cliente então realiza um pagamento, caracterizado pelo seu formato, e esse pagamento é com base no valor de uma venda. Uma venda possui um identificador único, valor total e data de processamento da venda. A venda é constituída por um item de venda, gerado com base no produto.
+
+## Tutorial para uso:
+<ul>
+<li>no Postgres, criar database "padaria"</li>
+<li>Criação das tuplas exatamente como <a href="./sql/tabelas.txt">tabelas.txt</a></li>
+<li>Criação das tuplas exatamente como <a href="./sql/insercao.txt">insercao.txt</a></li>
+<li>Em Sistema-de-padaria/src/bakery/src/main/resources/application.properties, deve estar <a href="./sql/application-properties.txt">Desse jeito</a></li>
+<li>Agora é só dar run no projeto!</li>
+</ul>
+
+## GETs e POSTs:
+<ul>
+<li>cliente [GET][POST]</li>
+<li>fornecedor [GET][POST]</li>
+<li>ingrediente [GET][POST]</li>
+<li>pagamento [GET][POST]</li>
+<li>produto-constituido-ingrediente [GET][POST]</li>
+<li>produto [GET][POST]</li>
+<li>venda [GET][POST]</li>
+<li>desconto-cliente [GET]</li>
+<li>estoque-atual-ingrediente [GET]</li>
+<li>[Inativo] lucro-geral-venda [GET]</li>
+<li>[Inativo] lucro-geralproduto [GET]</li>
+<li>meio-pagamento [GET]</li>
+<li>produtos-restantes [GET]</li>
+</ul>
+
+## Importante:
+<ul>
+<li>Siga <strong>estritamente</strong> as intruções indicadas, a aplicação é muito sensível a alteração de nomes de banco de dados, relações e atributos</li>
+<li>GET e POSTs devem ser devolvidos em JSON. Esteja ciente ao resgatar dados e principalmente ao inserir</li>
+<li>Algumas funcionalidades estão indisponíveis no momento dado que o banco de dados está em fase de alterações</li>
+</ul>
+
+## Pendências:
+<ul>
+<li>Funcionalidade: Lucro Geral por Venda.  adicionar a Query em VendaRepository e "descomentar" em LucroGeralVendaController</li>
+<li>Funcionalidade: Lucro por produto.  adicionar a Query em VendaRepository e "descomentar" em LucroProdutoController</li>
+<li>Funcionalidade: fazer tudo de lucro em determinado período (lidar com passada de parâmetros)</li>
+</ul>
