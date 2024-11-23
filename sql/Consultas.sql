@@ -159,23 +159,29 @@ GROUP BY p.tipo
 ORDER BY valor_total DESC;
 
 -- Estoque
-SELECT i.nome, i.fabricante, e.quantidade
+SELECT i.nome, e.quantidade, e.data_validade 
 FROM Padaria.estoque AS e, Padaria.ingrediente AS i
-WHERE e.id_ingrediente = i.id_ingrediente;
+WHERE e.id_ingrediente = i.id_ingrediente
+ORDER BY e.data_validade;
+
+-- Ingredientes do estoque que já expiraram
+SELECT i.nome, e.quantidade, e.data_validade 
+FROM Padaria.estoque AS e, Padaria.ingrediente AS i
+WHERE e.id_ingrediente = i.id_ingrediente AND data_validade < CURRENT_DATE
+ORDER BY e.data_validade;
+
+-- Ingredientes do estoque que estão próximos de expirarem (entre hoje e dois meses)
+SELECT i.nome, e.quantidade, e.data_validade 
+FROM Padaria.estoque AS e, Padaria.ingrediente AS i
+WHERE e.id_ingrediente = i.id_ingrediente AND 
+e.data_validade >= CURRENT_DATE AND 
+e.data_validade <= CURRENT_DATE + INTERVAL '2 month'
+ORDER BY e.data_validade;
 
 -- Produtos que restaram do dia anterior
 SELECT p.nome, pr.quantidade
 FROM padaria.produtos_restantes pr, padaria.produto p 
 WHERE pr.id_produto = p.id_produto;
-
--- Estoque atual de ingredientes :
--- Altereções da tabela estoque:
--- Aumento da quantidade, diariamente aumenta usando update
--- Diminuição diária por meio das vendas
-SELECT i.nome, e.quantidade
-FROM padaria.estoque e, padaria.ingrediente i 
-WHERE e.id_ingrediente = i.id_ingrediente ;
-
 
 
 

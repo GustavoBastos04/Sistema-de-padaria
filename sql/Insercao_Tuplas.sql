@@ -1,266 +1,73 @@
 SET search_path TO Padaria, public;
 
--- Inserções de Vendas para a Tabela Padaria.venda
-INSERT INTO Padaria.venda (valor) VALUES 
-(35.50),
-(22.75),
-(47.30),
-(18.90),
-(62.40),
-(15.60),
-(53.20),
-(29.85),
-(41.75),
-(33.60),
-(57.90),
-(26.40),
-(49.50),
-(19.75),
-(38.60),
-(45.30),
-(21.85),
-(55.20),
-(32.40),
-(67.50);
-
--- Inserções de Fornecedores para a Tabela Padaria.fornecedor
-INSERT INTO Padaria.fornecedor VALUES 
-('12.345.678/0001-90', 'Farinha & Cia Ltda', '(11) 3456-7890', 'contato@farinhaecia.com.br', 'Rua das Indústrias', '250', '04500-123', 'São Paulo', 'SP'),
-('23.456.789/0001-81', 'Padaria Ingredientes Atacado', '(21) 2345-6789', 'vendas@padariainsumos.com.br', 'Avenida Brasil', '750', '21050-200', 'Rio de Janeiro', 'RJ'),
-('34.567.890/0001-72', 'Doces e Massas Distribuidora', '(31) 3456-7890', 'comercial@docesmassas.com.br', 'Rua Minas Gerais', '480', '30190-120', 'Belo Horizonte', 'MG'),
-('45.678.901/0001-63', 'Açúcar e Mel Comércio', '(41) 4567-8901', 'contato@acucaremel.com.br', 'Alameda das Mercadorias', '120', '80010-200', 'Curitiba', 'PR'),
-('56.789.012/0001-54', 'Trigo Dourado Importadora', '(51) 5678-9012', 'exportacao@trigoourado.com.br', 'Rua dos Importadores', '350', '90010-100', 'Porto Alegre', 'RS'),
-('67.890.123/0001-45', 'Confeitaria Primavera Atacado', '(61) 6789-0123', 'vendedor@confeitariaprimavera.com.br', 'Setor de Distribuição', '680', '70070-120', 'Brasília', 'DF'),
-('78.901.234/0001-36', 'Chocolate e Cia Ltda', '(71) 7890-1234', 'comercial@chocolateecia.com.br', 'Avenida da Produção', '220', '40010-110', 'Salvador', 'BA'),
-('89.012.345/0001-27', 'Ovos e Laticínios Sul', '(81) 8901-2345', 'contato@ovoslaticiniossul.com.br', 'Rua das Fazendas', '550', '51020-300', 'Recife', 'PE'),
-('90.123.456/0001-18', 'Panificadora Insumos Norte', '(91) 9012-3456', 'vendas@panificadorainsumos.com.br', 'Travessa Industrial', '180', '66010-140', 'Belém', 'PA'),
-('01.234.567/0001-09', 'Fermento e Cia Importações', '(48) 0123-4567', 'importacao@fermentoecia.com.br', 'Rua dos Importadores', '620', '88010-100', 'Florianópolis', 'SC'),
-('12.345.678/0002-81', 'Grãos do Centro Distribuidora', '(62) 1234-5678', 'comercial@graoscentro.com.br', 'Avenida Industrial', '310', '74010-010', 'Goiânia', 'GO'),
-('23.456.789/0002-72', 'Padaria Express Fornecimentos', '(85) 2345-6789', 'contato@padariaexpress.com.br', 'Rua de Logística', '450', '60010-100', 'Fortaleza', 'CE'),
-('34.567.890/0002-63', 'Sabores e Massas Ltda', '(98) 3456-7890', 'vendedor@saboresemassas.com.br', 'Avenida dos Comerciantes', '280', '65010-100', 'São Luís', 'MA'),
-('45.678.901/0002-54', 'Ingredientes Gourmet Atacado', '(27) 4567-8901', 'comercial@ingredientesgourmet.com.br', 'Rua das Empresas', '160', '29010-100', 'Vitória', 'ES'),
-('56.789.012/0002-45', 'Açúcar Refinado Nacional', '(92) 5678-9012', 'contato@acucarrefinado.com.br', 'Avenida da Produção', '520', '69010-100', 'Manaus', 'AM'),
-('67.890.123/0002-36', 'Farelos e Massas Nordeste', '(83) 6789-0123', 'vendas@farelosemassas.com.br', 'Rua Industrial', '390', '58010-100', 'João Pessoa', 'PB'),
-('78.901.234/0002-27', 'Grãos do Acre Distribuidora', '(68) 7890-1234', 'comercial@graosacre.com.br', 'Avenida dos Comerciantes', '250', '69900-100', 'Rio Branco', 'AC'),
-('89.012.345/0002-18', 'Especiarias Roraima Ltda', '(95) 8901-2345', 'contato@especiariasroraima.com.br', 'Rua de Distribuição', '420', '69300-100', 'Boa Vista', 'RR'),
-('90.123.456/0002-09', 'Ingredientes Premium Norte', '(86) 9012-3456', 'vendedor@ingredientespremium.com.br', 'Avenida Logística', '180', '64010-100', 'Teresina', 'PI'),
-('01.234.567/0002-00', 'Padaria Plus Fornecimentos', '(84) 0123-4567', 'comercial@padariaplus.com.br', 'Rua Industrial', '560', '59010-100', 'Natal', 'RN');
-
--- Inserções de Itens de Estoque para a Tabela Padaria.item_estoque
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-INSERT INTO Padaria.item_estoque DEFAULT VALUES;
-
--- Inserções de Produtos para a Tabela Padaria.produto
-INSERT INTO Padaria.produto (nome, valor, quantidade, estoque_id_item) VALUES 
-('Pão Francês', 0.75, 100, 1),
-('Pão de Leite', 8.50, 30, 2),
-('Croissant', 5.90, 25, 3),
-('Bolo de Chocolate', 45.90, 8, 4),
-('Pão de Queijo', 2.50, 50, 5),
-('Baguete', 6.90, 20, 6),
-('Sonho', 4.50, 35, 7),
-('Rosca Doce', 12.90, 15, 8),
-('Torta de Frango', 52.90, 5, 9),
-('Cookie', 3.50, 40, 10),
-('Broa de Milho', 4.90, 25, 11),
-('Coxinha', 5.50, 45, 12),
-('Empada', 6.50, 30, 13),
-('Bolo de Cenoura', 42.90, 7, 14),
-('Pão Integral', 9.90, 25, 15),
-('Esfiha', 4.90, 40, 16),
-('Quiche de Legumes', 48.90, 6, 17),
-('Pão de Forma', 11.90, 20, 18),
-('Brigadeiro', 2.90, 60, 19),
-('Pastel de Nata', 5.90, 35, 20);
-
--- Inserções de Ingredientes para a Tabela Padaria.ingrediente
-INSERT INTO Padaria.ingrediente (estoque_id_item) VALUES 
-(1),  -- Farinha de Trigo
-(2),  -- Fermento
-(3),  -- Sal
-(4),  -- Açúcar
-(5),  -- Leite
-(6),  -- Ovos
-(7),  -- Manteiga
-(8),  -- Chocolate em Pó
-(9),  -- Polvilho
-(10), -- Queijo
-(11), -- Farinha de Milho
-(12), -- Creme de Leite
-(13), -- Leite Condensado
-(14), -- Frutas Secas
-(15), -- Farinha Integral
-(16), -- Gordura Vegetal
-(17), -- Amido de Milho
-(18), -- Essência de Baunilha
-(19), -- Cacau em Pó
-(20); -- Canela em Pó
-
 -- Inserções de Clientes para a Tabela Padaria.cliente
 INSERT INTO Padaria.cliente VALUES 
-('123.456.789-01', 'Maria Silva Santos', 'Premium', '(11) 98765-4321', 'maria.santos@email.com', 'Rua das Flores', '150', '04500-123', 'São Paulo', 'SP', 1),
-('987.654.321-09', 'João Pedro Oliveira', 'Basic', '(21) 97654-3210', 'joao.oliveira@email.com', 'Avenida Central', '85', '22640-100', 'Rio de Janeiro', 'RJ', 2),
-('456.789.123-45', 'Ana Beatriz Rocha', 'Premium', '(31) 96543-2109', 'ana.rocha@email.com', 'Travessa do Comércio', '42', '30190-120', 'Belo Horizonte', 'MG', 3),
-('321.654.987-65', 'Carlos Eduardo Souza', 'Premium', '(41) 95432-1098', 'carlos.souza@email.com', 'Rua Principal', '273', '80010-200', 'Curitiba', 'PR', 4),
-('654.321.987-54', 'Juliana Martins Costa', 'Basic', '(51) 94321-0987', 'juliana.costa@email.com', 'Alameda dos Anjos', '67', '90010-100', 'Porto Alegre', 'RS', 5),
-('234.567.890-12', 'Rafael Almeida Pereira', 'Premium', '(61) 93210-9876', 'rafael.pereira@email.com', 'Setor Bancário Sul', '33', '70070-120', 'Brasília', 'DF', 6),
-('876.543.210-98', 'Fernanda Rodrigues Lima', 'Premium', '(71) 92109-8765', 'fernanda.lima@email.com', 'Rua do Comércio', '189', '40010-110', 'Salvador', 'BA', 7),
-('543.210.987-65', 'Pedro Henrique Ferreira', 'Basic', '(81) 91098-7654', 'pedro.ferreira@email.com', 'Avenida Boa Viagem', '456', '51020-300', 'Recife', 'PE', 8),
-('210.987.654-32', 'Mariana Santos Oliveira', 'Premium', '(91) 90987-6543', 'mariana.oliveira@email.com', 'Travessa da Paz', '78', '66010-140', 'Belém', 'PA', 9),
-('987.210.543-21', 'Lucas Andrade Silveira', 'Premium', '(48) 99876-5432', 'lucas.silveira@email.com', 'Rua das Palmeiras', '212', '88010-100', 'Florianópolis', 'SC', 10),
-('456.321.789-09', 'Camila Ribeiro Martins', 'Basic', '(62) 98765-4321', 'camila.martins@email.com', 'Avenida Anhanguera', '345', '74010-010', 'Goiânia', 'GO', 11),
-('321.789.456-54', 'Ricardo Mendes Alves', 'Basic', '(85) 97654-3210', 'ricardo.alves@email.com', 'Rua do Mercado', '567', '60010-100', 'Fortaleza', 'CE', 12),
-('654.987.321-87', 'Amanda Costa Cardoso', 'Premium', '(98) 96543-2109', 'amanda.cardoso@email.com', 'Avenida dos Estados', '890', '65010-100', 'São Luís', 'MA', 13),
-('234.876.543-76', 'Gustavo Pinto Teixeira', 'Basic', '(27) 95432-1098', 'gustavo.teixeira@email.com', 'Rua do Porto', '234', '29010-100', 'Vitória', 'ES', 14),
-('876.234.567-65', 'Larissa Campos Barbosa', 'Premium', '(92) 94321-0987', 'larissa.barbosa@email.com', 'Avenida Eduardo Ribeiro', '678', '69010-100', 'Manaus', 'AM', 15),
-('543.876.210-43', 'Bruno Santos Melo', 'Premium', '(83) 93210-9876', 'bruno.melo@email.com', 'Rua das Trincheiras', '456', '58010-100', 'João Pessoa', 'PB', 16),
-('210.543.987-32', 'Isabella Oliveira Cruz', 'Basic', '(68) 92109-8765', 'isabella.cruz@email.com', 'Avenida Ceará', '123', '69900-100', 'Rio Branco', 'AC', 17),
-('987.654.543-21', 'Matheus Rodrigues Nunes', 'Basic', '(95) 91098-7654', 'matheus.nunes@email.com', 'Rua Central', '789', '69300-100', 'Boa Vista', 'RR', 18),
-('456.210.987-10', 'Sophia Almeida Santos', 'Premium', '(86) 90987-6543', 'sophia.santos@email.com', 'Avenida Presidente Vargas', '456', '64010-100', 'Teresina', 'PI', 19),
-('321.654.210-98', 'Gabriel Costa Oliveira', 'Basic', '(84) 99876-5432', 'gabriel.oliveira@email.com', 'Rua da Concórdia', '234', '59010-100', 'Natal', 'RN', 20);
+('123.456.789-01', 'Maria Silva Santos', 'Premium', '(11) 98765-4321', 'maria.santos@email.com', 'Rua das Flores', '150', '04500-123', 'São Paulo', 'SP'),
+('987.654.321-09', 'João Pedro Oliveira', 'Basic', '(21) 97654-3210', 'joao.oliveira@email.com', 'Avenida Central', '85', '22640-100', 'Rio de Janeiro', 'RJ'),
+('456.789.123-45', 'Ana Beatriz Rocha', 'Premium', '(31) 96543-2109', 'ana.rocha@email.com', 'Travessa do Comércio', '42', '30190-120', 'Belo Horizonte', 'MG'),
+('321.654.987-65', 'Carlos Eduardo Souza', 'Premium', '(41) 95432-1098', 'carlos.souza@email.com', 'Rua Principal', '273', '80010-200', 'Curitiba', 'PR'),
+('654.321.987-54', 'Juliana Martins Costa', 'Basic', '(51) 94321-0987', 'juliana.costa@email.com', 'Alameda dos Anjos', '67', '90010-100', 'Porto Alegre', 'RS'),
+('234.567.890-12', 'Rafael Almeida Pereira', 'Premium', '(61) 93210-9876', 'rafael.pereira@email.com', 'Setor Bancário Sul', '33', '70070-120', 'Brasília', 'DF'),
+('876.543.210-98', 'Fernanda Rodrigues Lima', 'Premium', '(71) 92109-8765', 'fernanda.lima@email.com', 'Rua do Comércio', '189', '40010-110', 'Salvador', 'BA'),
+('543.210.987-65', 'Pedro Henrique Ferreira', 'Basic', '(81) 91098-7654', 'pedro.ferreira@email.com', 'Avenida Boa Viagem', '456', '51020-300', 'Recife', 'PE'),
+('210.987.654-32', 'Mariana Santos Oliveira', 'Premium', '(91) 90987-6543', 'mariana.oliveira@email.com', 'Travessa da Paz', '78', '66010-140', 'Belém', 'PA'),
+('987.210.543-21', 'Lucas Andrade Silveira', 'Premium', '(48) 99876-5432', 'lucas.silveira@email.com', 'Rua das Palmeiras', '212', '88010-100', 'Florianópolis', 'SC'),
+('456.321.789-09', 'Camila Ribeiro Martins', 'Basic', '(62) 98765-4321', 'camila.martins@email.com', 'Avenida Anhanguera', '345', '74010-010', 'Goiânia', 'GO'),
+('321.789.456-54', 'Ricardo Mendes Alves', 'Basic', '(85) 97654-3210', 'ricardo.alves@email.com', 'Rua do Mercado', '567', '60010-100', 'Fortaleza', 'CE'),
+('654.987.321-87', 'Amanda Costa Cardoso', 'Premium', '(98) 96543-2109', 'amanda.cardoso@email.com', 'Avenida dos Estados', '890', '65010-100', 'São Luís', 'MA'),
+('234.876.543-76', 'Gustavo Pinto Teixeira', 'Basic', '(27) 95432-1098', 'gustavo.teixeira@email.com', 'Rua do Porto', '234', '29010-100', 'Vitória', 'ES'),
+('876.234.567-65', 'Larissa Campos Barbosa', 'Premium', '(92) 94321-0987', 'larissa.barbosa@email.com', 'Avenida Eduardo Ribeiro', '678', '69010-100', 'Manaus', 'AM'),
+('543.876.210-43', 'Bruno Santos Melo', 'Premium', '(83) 93210-9876', 'bruno.melo@email.com', 'Rua das Trincheiras', '456', '58010-100', 'João Pessoa', 'PB'),
+('210.543.987-32', 'Isabella Oliveira Cruz', 'Basic', '(68) 92109-8765', 'isabella.cruz@email.com', 'Avenida Ceará', '123', '69900-100', 'Rio Branco', 'AC'),
+('987.654.543-21', 'Matheus Rodrigues Nunes', 'Basic', '(95) 91098-7654', 'matheus.nunes@email.com', 'Rua Central', '789', '69300-100', 'Boa Vista', 'RR'),
+('456.210.987-10', 'Sophia Almeida Santos', 'Premium', '(86) 90987-6543', 'sophia.santos@email.com', 'Avenida Presidente Vargas', '456', '64010-100', 'Teresina', 'PI'),
+('321.654.210-98', 'Gabriel Costa Oliveira', 'Basic', '(84) 99876-5432', 'gabriel.oliveira@email.com', 'Rua da Concórdia', '234', '59010-100', 'Natal', 'RN');
 
--- Inserções de Pagamentos para a Tabela Padaria.pagamento
-INSERT INTO Padaria.pagamento VALUES 
-('123.456.789-01', 'Cartão de Crédito'),
-('987.654.321-09', 'Cartão de Débito'),
-('456.789.123-45', 'PIX'),
-('321.654.987-65', 'Dinheiro'),
-('654.321.987-54', 'Cartão de Crédito'),
-('234.567.890-12', 'PIX'),
-('876.543.210-98', 'Cartão de Débito'),
-('543.210.987-65', 'Vale Alimentação'),
-('210.987.654-32', 'Cartão de Crédito'),
-('987.210.543-21', 'PIX'),
-('456.321.789-09', 'Dinheiro'),
-('321.789.456-54', 'Cartão de Débito'),
-('654.987.321-87', 'Vale Refeição'),
-('234.876.543-76', 'Cartão de Crédito'),
-('876.234.567-65', 'PIX'),
-('543.876.210-43', 'Vale Alimentação'),
-('210.543.987-32', 'Cartão de Débito'),
-('987.654.543-21', 'Dinheiro'),
-('456.210.987-10', 'Cartão de Crédito'),
-('321.654.210-98', 'PIX');
+-- Inserções de Vendas para a Tabela Padaria.venda
+INSERT INTO Padaria.venda (id_venda, valor) VALUES 
+(1,35.50),
+(2,22.75),
+(3,47.30),
+(4,18.90),
+(5,62.40),
+(6,15.60),
+(7,53.20),
+(8,29.85),
+(9,41.75),
+(10,33.60),
+(11,57.90),
+(12,26.40),
+(13,49.50),
+(14,19.75),
+(15,38.60),
+(16,45.30),
+(17,21.85),
+(18,55.20),
+(19,32.40),
+(20,67.50);
 
--- Inserções de Produto_Constituido_Ingrediente
-INSERT INTO Padaria.produto_constituido_ingrediente VALUES 
--- Pão Francês (id: 1)
-(1, 1, 1000),  -- Farinha de Trigo: 1kg
-(1, 2, 30),    -- Fermento: 30g
-(1, 3, 20),    -- Sal: 20g
-(1, 7, 50),    -- Manteiga: 50g
-
--- Pão de Leite (id: 2)
-(2, 1, 500),   -- Farinha de Trigo: 500g
-(2, 2, 20),    -- Fermento: 20g
-(2, 4, 50),    -- Açúcar: 50g
-(2, 5, 200),   -- Leite: 200ml
-(2, 6, 2),     -- Ovos: 2 unidades
-
--- Croissant (id: 3)
-(3, 1, 300),   -- Farinha de Trigo: 300g
-(3, 7, 200),   -- Manteiga: 200g
-(3, 3, 5),     -- Sal: 5g
-(3, 2, 15),    -- Fermento: 15g
-
--- Bolo de Chocolate (id: 4)
-(4, 1, 400),   -- Farinha de Trigo: 400g
-(4, 8, 100),   -- Chocolate em Pó: 100g
-(4, 4, 300),   -- Açúcar: 300g
-(4, 6, 4),     -- Ovos: 4 unidades
-(4, 5, 250),   -- Leite: 250ml
-
--- Pão de Queijo (id: 5)
-(5, 9, 500),   -- Polvilho: 500g
-(5, 10, 300),  -- Queijo: 300g
-(5, 6, 3),     -- Ovos: 3 unidades
-(5, 5, 200),   -- Leite: 200ml
-(5, 7, 100),   -- Manteiga: 100g
-
--- Baguete (id: 6)
-(6, 1, 500),   -- Farinha de Trigo: 500g
-(6, 2, 25),    -- Fermento: 25g
-(6, 3, 10),    -- Sal: 10g
-
--- Sonho (id: 7)
-(7, 1, 300),   -- Farinha de Trigo: 300g
-(7, 2, 15),    -- Fermento: 15g
-(7, 4, 100),   -- Açúcar: 100g
-(7, 6, 2),     -- Ovos: 2 unidades
-(7, 13, 200),  -- Leite Condensado: 200g
-
--- Rosca Doce (id: 8)
-(8, 1, 400),   -- Farinha de Trigo: 400g
-(8, 2, 20),    -- Fermento: 20g
-(8, 4, 150),   -- Açúcar: 150g
-(8, 6, 3),     -- Ovos: 3 unidades
-(8, 14, 100),  -- Frutas Secas: 100g
-
--- Torta de Frango (id: 9)
-(9, 1, 300),   -- Farinha de Trigo: 300g
-(9, 7, 150),   -- Manteiga: 150g
-(9, 6, 2),     -- Ovos: 2 unidades
-(9, 12, 200),  -- Creme de Leite: 200g
-
--- Cookie (id: 10)
-(10, 1, 250),  -- Farinha de Trigo: 250g
-(10, 4, 200),  -- Açúcar: 200g
-(10, 7, 125),  -- Manteiga: 125g
-(10, 8, 50);   -- Chocolate em Pó: 50g
-
--- Inserções de Fornece_Item_Estoque
-INSERT INTO Padaria.fornece_item_estoque VALUES 
--- Farinha & Cia Ltda
-('12.345.678/0001-90', 1, 500, 89.90),   -- Farinha de Trigo: 500kg
-('12.345.678/0001-90', 15, 200, 129.90), -- Farinha Integral: 200kg
-('12.345.678/0001-90', 11, 100, 95.50),  -- Farinha de Milho: 100kg
-
--- Padaria Ingredientes Atacado
-('23.456.789/0001-81', 2, 50, 85.90),    -- Fermento: 50kg
-('23.456.789/0001-81', 3, 100, 45.90),   -- Sal: 100kg
-('23.456.789/0001-81', 17, 30, 62.50),   -- Amido de Milho: 30kg
-
--- Doces e Massas Distribuidora
-('34.567.890/0001-72', 8, 25, 89.90),    -- Chocolate em Pó: 25kg
-('34.567.890/0001-72', 13, 100, 99.90),  -- Leite Condensado: 100 caixas
-('34.567.890/0001-72', 19, 20, 79.90),   -- Cacau em Pó: 20kg
-
--- Açúcar e Mel Comércio
-('45.678.901/0001-63', 4, 400, 85.50),   -- Açúcar: 400kg
-('45.678.901/0001-63', 18, 10, 45.90),   -- Essência de Baunilha: 10L
-('45.678.901/0001-63', 20, 15, 59.90),   -- Canela em Pó: 15kg
-
--- Trigo Dourado Importadora
-('56.789.012/0001-54', 9, 200, 95.90),   -- Polvilho: 200kg
-('56.789.012/0001-54', 16, 150, 75.90),  -- Gordura Vegetal: 150kg
-
--- Confeitaria Primavera Atacado
-('67.890.123/0001-45', 14, 50, 199.90),  -- Frutas Secas: 50kg
-('67.890.123/0001-45', 12, 100, 89.90),  -- Creme de Leite: 100 caixas
-
--- Ovos e Laticínios Sul
-('89.012.345/0001-27', 6, 500, 199.90),  -- Ovos: 500 dúzias
-('89.012.345/0001-27', 5, 300, 159.90),  -- Leite: 300L
-('89.012.345/0001-27', 7, 200, 189.90),  -- Manteiga: 200kg
-('89.012.345/0001-27', 10, 150, 299.90); -- Queijo: 150kg
+-- Inserções de Produtos para a Tabela Padaria.produto
+INSERT INTO Padaria.produto  VALUES 
+(1, 'Pão Francês', 0.75),
+(2, 'Pão de Leite', 8.50),
+(3, 'Croissant', 5.90),
+(4, 'Bolo de Chocolate', 45.90),
+(5, 'Pão de Queijo', 2.50),
+(6, 'Baguete', 6.90),
+(7, 'Sonho', 4.50),
+(8, 'Rosca Doce', 12.90),
+(9, 'Torta de Frango', 52.90),
+(10, 'Cookie', 3.50),
+(11, 'Broa de Milho', 4.90),
+(12, 'Coxinha', 5.50),
+(13, 'Empada', 6.50),
+(14, 'Bolo de Cenoura', 42.90),
+(15, 'Pão Integral', 9.90),
+(16, 'Esfiha', 4.90),
+(17, 'Quiche de Legumes', 48.90),
+(18, 'Pão de Forma', 11.90),
+(19, 'Brigadeiro', 2.90),
+(20, 'Pastel de Nata', 5.90);
 
 -- Inserções de Cliente_Gera_Venda
 INSERT INTO Padaria.cliente_gera_venda VALUES 
@@ -286,7 +93,7 @@ INSERT INTO Padaria.cliente_gera_venda VALUES
 ('321.654.210-98', 20); -- Gabriel Costa Oliveira - Venda de R$ 67,50
 
 -- Inserções para a tabela Padaria.item_venda
-INSERT INTO Padaria.item_venda (produto_id_produto, venda_id_venda) VALUES
+INSERT INTO Padaria.item_venda VALUES
 -- Venda 1 (35.50) - Pão Francês e Bolo de Chocolate
 (1, 1),  -- Pão Francês
 (4, 1),  -- Bolo de Chocolate
@@ -363,3 +170,302 @@ INSERT INTO Padaria.item_venda (produto_id_produto, venda_id_venda) VALUES
 -- Venda 20 (67.50) - Torta de Frango e Quiche de Legumes
 (9, 20),  -- Torta de Frango
 (17, 20); -- Quiche de Legumes
+
+-- Inserções de Pagamentos para a Tabela Padaria.pagamento
+INSERT INTO Padaria.pagamento VALUES 
+('123.456.789-01', 'Cartão de Crédito', 1),
+('987.654.321-09', 'Cartão de Débito', 2),
+('456.789.123-45', 'PIX', 3),
+('321.654.987-65', 'Dinheiro', 4),
+('654.321.987-54', 'Cartão de Crédito', 5),
+('234.567.890-12', 'PIX', 6),
+('876.543.210-98', 'Cartão de Débito', 7),
+('543.210.987-65', 'Vale Alimentação', 8),
+('210.987.654-32', 'Cartão de Crédito', 9),
+('987.210.543-21', 'PIX', 10),
+('456.321.789-09', 'Dinheiro', 11),
+('321.789.456-54', 'Cartão de Débito', 12),
+('654.987.321-87', 'Vale Alimentação', 13),
+('234.876.543-76', 'Cartão de Crédito', 14),
+('876.234.567-65', 'PIX', 15),
+('543.876.210-43', 'Vale Alimentação', 16),
+('210.543.987-32', 'Cartão de Débito', 17),
+('987.654.543-21', 'Dinheiro', 18),
+('456.210.987-10', 'Cartão de Crédito', 19),
+('321.654.210-98', 'PIX', 20);
+
+-- Inserções de Fornecedores para a Tabela Padaria.fornecedor
+INSERT INTO Padaria.fornecedor VALUES 
+('12.345.678/0001-90', 'Farinha & Cia Ltda', '(11) 3456-7890', 'contato@farinhaecia.com.br', 'Rua das Indústrias', '250', '04500-123', 'São Paulo', 'SP'),
+('23.456.789/0001-81', 'Padaria Ingredientes Atacado', '(21) 2345-6789', 'vendas@padariainsumos.com.br', 'Avenida Brasil', '750', '21050-200', 'Rio de Janeiro', 'RJ'),
+('34.567.890/0001-72', 'Doces e Massas Distribuidora', '(31) 3456-7890', 'comercial@docesmassas.com.br', 'Rua Minas Gerais', '480', '30190-120', 'Belo Horizonte', 'MG'),
+('45.678.901/0001-63', 'Açúcar e Mel Comércio', '(41) 4567-8901', 'contato@acucaremel.com.br', 'Alameda das Mercadorias', '120', '80010-200', 'Curitiba', 'PR'),
+('56.789.012/0001-54', 'Trigo Dourado Importadora', '(51) 5678-9012', 'exportacao@trigoourado.com.br', 'Rua dos Importadores', '350', '90010-100', 'Porto Alegre', 'RS'),
+('67.890.123/0001-45', 'Confeitaria Primavera Atacado', '(61) 6789-0123', 'vendedor@confeitariaprimavera.com.br', 'Setor de Distribuição', '680', '70070-120', 'Brasília', 'DF'),
+('78.901.234/0001-36', 'Chocolate e Cia Ltda', '(71) 7890-1234', 'comercial@chocolateecia.com.br', 'Avenida da Produção', '220', '40010-110', 'Salvador', 'BA'),
+('89.012.345/0001-27', 'Ovos e Laticínios Sul', '(81) 8901-2345', 'contato@ovoslaticiniossul.com.br', 'Rua das Fazendas', '550', '51020-300', 'Recife', 'PE'),
+('90.123.456/0001-18', 'Panificadora Insumos Norte', '(91) 9012-3456', 'vendas@panificadorainsumos.com.br', 'Travessa Industrial', '180', '66010-140', 'Belém', 'PA'),
+('01.234.567/0001-09', 'Fermento e Cia Importações', '(48) 0123-4567', 'importacao@fermentoecia.com.br', 'Rua dos Importadores', '620', '88010-100', 'Florianópolis', 'SC'),
+('12.345.678/0002-81', 'Grãos do Centro Distribuidora', '(62) 1234-5678', 'comercial@graoscentro.com.br', 'Avenida Industrial', '310', '74010-010', 'Goiânia', 'GO'),
+('23.456.789/0002-72', 'Padaria Express Fornecimentos', '(85) 2345-6789', 'contato@padariaexpress.com.br', 'Rua de Logística', '450', '60010-100', 'Fortaleza', 'CE'),
+('34.567.890/0002-63', 'Sabores e Massas Ltda', '(98) 3456-7890', 'vendedor@saboresemassas.com.br', 'Avenida dos Comerciantes', '280', '65010-100', 'São Luís', 'MA'),
+('45.678.901/0002-54', 'Ingredientes Gourmet Atacado', '(27) 4567-8901', 'comercial@ingredientesgourmet.com.br', 'Rua das Empresas', '160', '29010-100', 'Vitória', 'ES'),
+('56.789.012/0002-45', 'Açúcar Refinado Nacional', '(92) 5678-9012', 'contato@acucarrefinado.com.br', 'Avenida da Produção', '520', '69010-100', 'Manaus', 'AM'),
+('67.890.123/0002-36', 'Farelos e Massas Nordeste', '(83) 6789-0123', 'vendas@farelosemassas.com.br', 'Rua Industrial', '390', '58010-100', 'João Pessoa', 'PB'),
+('78.901.234/0002-27', 'Grãos do Acre Distribuidora', '(68) 7890-1234', 'comercial@graosacre.com.br', 'Avenida dos Comerciantes', '250', '69900-100', 'Rio Branco', 'AC'),
+('89.012.345/0002-18', 'Especiarias Roraima Ltda', '(95) 8901-2345', 'contato@especiariasroraima.com.br', 'Rua de Distribuição', '420', '69300-100', 'Boa Vista', 'RR'),
+('90.123.456/0002-09', 'Ingredientes Premium Norte', '(86) 9012-3456', 'vendedor@ingredientespremium.com.br', 'Avenida Logística', '180', '64010-100', 'Teresina', 'PI'),
+('01.234.567/0002-00', 'Padaria Plus Fornecimentos', '(84) 0123-4567', 'comercial@padariaplus.com.br', 'Rua Industrial', '560', '59010-100', 'Natal', 'RN');
+
+-- Inserções de Ingredientes para a Tabela Padaria.ingrediente
+INSERT INTO Padaria.ingrediente VALUES 
+(1, 'Farinha de Trigo'),
+(2, 'Fermento'),
+(3, 'Sal'),
+(4, 'Açúcar'),
+(5, 'Leite'),
+(6, 'Ovos'),
+(7, 'Manteiga'),
+(8, 'Chocolate em Pó'),
+(9, 'Polvilho'),
+(10, 'Queijo'),
+(11, 'Farinha de Milho'),
+(12, 'Creme de Leite'),
+(13, 'Leite Condensado'),
+(14, 'Frutas Secas'),
+(15, 'Farinha Integral'),
+(16, 'Gordura Vegetal'),
+(17, 'Amido de Milho'),
+(18, 'Essência de Baunilha'),
+(19, 'Cacau em Pó'),
+(20, 'Canela em Pó');
+
+-- Inserções de fornece_ingredientes
+INSERT INTO Padaria.fornece_ingrediente VALUES 
+('12.345.678/0001-90', 1, 100, 10.50),
+('23.456.789/0001-81', 1, 200, 9.80),
+
+('34.567.890/0001-72', 2, 50, 15.00),
+('01.234.567/0001-09', 2, 80, 14.00),
+
+('45.678.901/0001-63', 3, 300, 3.20),
+('12.345.678/0002-81', 3, 500, 3.10),
+
+('56.789.012/0001-54', 4, 250, 4.50),
+('23.456.789/0002-72', 4, 400, 4.30),
+
+('67.890.123/0001-45', 5, 100, 6.00),
+('34.567.890/0002-63', 5, 200, 5.90),
+
+('78.901.234/0001-36', 6, 300, 8.75),
+('89.012.345/0001-27', 6, 400, 8.60),
+
+('90.123.456/0001-18', 7, 150, 12.00),
+('01.234.567/0002-00', 7, 180, 11.80),
+
+('12.345.678/0001-90', 8, 200, 20.50),
+('23.456.789/0001-81', 8, 250, 19.80),
+
+('34.567.890/0001-72', 9, 100, 10.00),
+('45.678.901/0002-54', 9, 150, 9.50),
+
+('56.789.012/0001-54', 10, 80, 18.75),
+('67.890.123/0002-36', 10, 120, 18.40),
+
+('78.901.234/0002-27', 11, 300, 8.30),
+('89.012.345/0002-18', 11, 400, 8.20),
+
+('90.123.456/0002-09', 12, 250, 12.50),
+('12.345.678/0002-81', 12, 300, 12.20),
+
+('23.456.789/0002-72', 13, 180, 10.90),
+('34.567.890/0002-63', 13, 200, 10.70),
+
+('45.678.901/0002-54', 14, 100, 25.00),
+('56.789.012/0002-45', 14, 150, 24.50),
+
+('67.890.123/0002-36', 15, 200, 15.00),
+('78.901.234/0002-27', 15, 250, 14.80),
+
+('89.012.345/0002-18', 16, 300, 9.25),
+('90.123.456/0002-09', 16, 350, 9.10),
+
+('01.234.567/0002-00', 17, 200, 5.80),
+('12.345.678/0001-90', 17, 250, 5.65),
+
+('23.456.789/0001-81', 18, 100, 22.00),
+('34.567.890/0001-72', 18, 150, 21.50),
+
+('45.678.901/0001-63', 19, 120, 15.75),
+('56.789.012/0001-54', 19, 180, 15.50),
+
+('67.890.123/0001-45', 20, 90, 12.30),
+('78.901.234/0001-36', 20, 130, 12.00);
+
+-- Inserções na Tabela produto_constituido_ingrediente com quantidades para uma única unidade
+INSERT INTO Padaria.produto_constituido_ingrediente (id_produto, id_ingrediente, quantidade) VALUES
+-- Pão Francês
+(1, 1, 100),      -- Farinha de Trigo
+(1, 2, 5),        -- Fermento
+(1, 3, 2),        -- Sal
+(1, 5, 10),       -- Leite
+
+-- Pão de Leite
+(2, 1, 80),       -- Farinha de Trigo
+(2, 2, 3),        -- Fermento
+(2, 3, 2),        -- Sal
+(2, 5, 30),       -- Leite
+(2, 7, 5),        -- Manteiga
+
+-- Croissant
+(3, 1, 70),       -- Farinha de Trigo
+(3, 2, 2),        -- Fermento
+(3, 3, 1),        -- Sal
+(3, 7, 20),       -- Manteiga
+
+-- Bolo de Chocolate
+(4, 1, 200),      -- Farinha de Trigo
+(4, 4, 100),      -- Açúcar
+(4, 6, 4),        -- Ovos
+(4, 8, 50),       -- Chocolate em Pó
+(4, 12, 50),      -- Creme de Leite
+
+-- Pão de Queijo
+(5, 9, 60),       -- Polvilho
+(5, 10, 30),      -- Queijo
+(5, 7, 10),       -- Manteiga
+
+-- Baguete
+(6, 1, 120),      -- Farinha de Trigo
+(6, 2, 5),        -- Fermento
+(6, 3, 3),        -- Sal
+
+-- Sonho
+(7, 1, 50),       -- Farinha de Trigo
+(7, 4, 30),       -- Açúcar
+(7, 6, 2),        -- Ovos
+(7, 7, 10),       -- Manteiga
+
+-- Rosca Doce
+(8, 1, 150),      -- Farinha de Trigo
+(8, 4, 60),       -- Açúcar
+(8, 6, 3),        -- Ovos
+(8, 7, 15),       -- Manteiga
+
+-- Torta de Frango
+(9, 1, 200),      -- Farinha de Trigo
+(9, 5, 20),       -- Leite
+(9, 6, 2),        -- Ovos
+(9, 16, 10),      -- Gordura Vegetal
+(9, 17, 10),      -- Amido de Milho
+
+-- Cookie
+(10, 1, 40),      -- Farinha de Trigo
+(10, 4, 20),      -- Açúcar
+(10, 8, 15),      -- Chocolate em Pó
+(10, 7, 10),      -- Manteiga
+
+-- Broa de Milho
+(11, 11, 60),     -- Farinha de Milho
+(11, 3, 2),       -- Sal
+(11, 4, 15),      -- Açúcar
+
+-- Coxinha
+(12, 1, 50),      -- Farinha de Trigo
+(12, 5, 15),      -- Leite
+(12, 6, 1),       -- Ovos
+(12, 7, 5),       -- Manteiga
+
+-- Empada
+(13, 1, 40),      -- Farinha de Trigo
+(13, 5, 10),      -- Leite
+(13, 7, 10),      -- Manteiga
+
+-- Bolo de Cenoura
+(14, 1, 180),     -- Farinha de Trigo
+(14, 4, 90),      -- Açúcar
+(14, 6, 3),       -- Ovos
+(14, 15, 10),     -- Farinha Integral
+
+-- Pão Integral
+(15, 15, 100),    -- Farinha Integral
+(15, 2, 5),       -- Fermento
+(15, 3, 2),       -- Sal
+
+-- Esfiha
+(16, 1, 60),      -- Farinha de Trigo
+(16, 5, 15),      -- Leite
+(16, 3, 3),       -- Sal
+(16, 7, 5),       -- Manteiga
+
+-- Quiche de Legumes
+(17, 1, 100),     -- Farinha de Trigo
+(17, 5, 20),      -- Leite
+(17, 16, 15),     -- Gordura Vegetal
+(17, 12, 50),     -- Creme de Leite
+
+-- Pão de Forma
+(18, 1, 80),      -- Farinha de Trigo
+(18, 2, 4),       -- Fermento
+(18, 3, 3),       -- Sal
+
+-- Brigadeiro
+(19, 13, 30),     -- Leite Condensado
+(19, 19, 10),     -- Cacau em Pó
+(19, 4, 20),      -- Açúcar
+
+-- Pastel de Nata
+(20, 1, 30),      -- Farinha de Trigo
+(20, 5, 10),      -- Leite
+(20, 6, 1),       -- Ovos
+(20, 4, 15),      -- Açúcar
+(20, 18, 5);      -- Essência de Baunilha
+
+INSERT INTO Padaria.estoque VALUES
+-- Expired products (dates before 23/11/2024)
+(1, 500, '2024-10-15'), -- Farinha de Trigo
+(2, 130, '2024-11-10'), -- Fermento
+(3, 800, '2024-11-20'), -- Sal
+(4, 650, '2024-11-01'), -- Açúcar
+
+-- Close to expiration (next 2-3 months)
+(5, 300, '2024-12-15'), -- Leite
+(6, 700, '2024-12-30'), -- Ovos
+(7, 330, '2025-01-15'), -- Manteiga
+(8, 450, '2025-01-30'), -- Chocolate em Pó
+(9, 250, '2024-12-25'), -- Polvilho
+(10, 200, '2025-01-10'), -- Queijo
+
+-- Long before expiration (6+ months ahead)
+(11, 700, '2025-06-15'), -- Farinha de Milho
+(12, 550, '2025-07-20'), -- Creme de Leite
+(13, 380, '2025-08-10'), -- Leite Condensado
+(14, 250, '2025-09-30'), -- Frutas Secas
+(15, 500, '2025-06-30'), -- Farinha Integral
+(16, 650, '2025-07-15'), -- Gordura Vegetal
+(17, 450, '2025-08-30'), -- Amido de Milho
+(18, 250, '2025-09-15'), -- Essência de Baunilha
+(19, 300, '2025-07-25'), -- Cacau em Pó
+(20, 220, '2025-08-20'); -- Canela em Pó
+
+INSERT INTO Padaria.produtos_restantes VALUES
+(1, 20), -- Pão Francês
+(2, 30),  -- Pão de Leite
+(3, 10),  -- Croissant
+(4, 3),  -- Bolo de Chocolate
+(5, 30), -- Pão de Queijo
+(6, 10), -- Baguete
+(7, 5),  -- Sonho
+(8, 4),  -- Rosca Doce
+(9, 3),  -- Torta de Frango
+(10, 30), -- Cookie
+(11, 15), -- Broa de Milho
+(12, 23), -- Coxinha
+(13, 14), -- Empada
+(14, 6), -- Bolo de Cenoura
+(15, 15), -- Pão Integral
+(16, 7), -- Esfiha
+(17, 17), -- Quiche de Legumes
+(18, 35), -- Pão de Forma
+(19, 40), -- Brigadeiro
+(20, 20); -- Pastel de Nata
