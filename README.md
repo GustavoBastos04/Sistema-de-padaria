@@ -50,6 +50,8 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>[Inativo] lucro-geralproduto [GET]</li>
 <li>meio-pagamento [GET]</li>
 <li>produtos-restantes [GET]</li>
+<li>ingrediente-proximo-expirar [GET]</li>
+<li>ingrediente-vencido [GET]</li>
 </ul>
 
 ## Importante:

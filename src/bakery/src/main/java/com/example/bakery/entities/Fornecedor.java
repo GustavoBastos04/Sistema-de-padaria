@@ -12,7 +12,6 @@ import lombok.*;
 @Table(name = "fornecedor")
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of = "cpnj")
 public class Fornecedor {
 
     @Id
