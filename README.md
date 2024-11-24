@@ -50,7 +50,7 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>[Inativo] lucro-geralproduto [GET]</li>
 <li>meio-pagamento [GET]</li>
 <li>produtos-restantes [GET]</li>
-<li>ingrediente-proximo-expirar [GET]</li>
+<li>ingrediente-proximo-expirar?format=&days= [GET] - format = {days, weeks, months} e number={1,2,3,4,...}</li>
 <li>ingrediente-vencido [GET]</li>
 </ul>
 

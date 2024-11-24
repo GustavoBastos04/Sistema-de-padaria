@@ -33,7 +33,7 @@ public interface IngredienteRepository extends JpaRepository<Ingrediente, Long> 
             "FROM estoque AS e, ingrediente AS i\n" +
             "WHERE e.id_ingrediente = i.id_ingrediente AND \n" +
             "e.data_validade >= :paramDate AND \n" +
-            "e.data_validade <= :paramDate + INTERVAL '2 month'\n" +
+            "e.data_validade <= :paramFutureDate \n" +
             "ORDER BY e.data_validade;")
-    List<ConsultaEstoqueIngredienteDTO> getIngredienteProximoExpirar(@Param("paramDate") Date paramDate);
+    List<ConsultaEstoqueIngredienteDTO> getCustomIngredienteProximoExpirar(@Param("paramDate") Date paramDate, @Param("paramFutureDate") Date paramFutureDate);
 }
