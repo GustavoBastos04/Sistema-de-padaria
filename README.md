@@ -22,6 +22,11 @@ Sistema de padaria que registra assinaturas de clientes (que permitem descontos 
 
 🚩*Estimar quantos ingredientes estão disponíveis no estoque em um dado momento.*
 
+🚩*Procurar quais os ingredientes estão próximos de vencer de acordo com o número de dias, semanas e meses.*
+
+🚩*Procurar Igredientes vencidos.*
+
+🚩*Procurar produtos restantes no estoque.*
 
 ## ✏️ Requisito de dados: 
 Uma padaria quer construir um sistema para armazenar informações pertinentes para melhorar os processos do negócio e a lucratividade. O cliente cadastrado no sistema da padaria possui o atributo de CPF como principal identificador, além do seu nome, número de telefone, e-mail e a informação composta de seu endereço. Esse cliente compra um produto, que possui um identificador único, nome, valor unitário e quantidade disponível nas prateleiras do estabelecimento. O produto consome os ingredientes estocados, dados por um identificador único, nome, quantidade disponível, valor unitário, validade e marca. O produto é constituído por ingredientes de uma receita, com a quantidade de cada produto. O cliente então realiza um pagamento, caracterizado pelo seu formato, e esse pagamento é com base no valor de uma venda. Uma venda possui um identificador único, valor total e data de processamento da venda. A venda é constituída por um item de venda, gerado com base no produto.
