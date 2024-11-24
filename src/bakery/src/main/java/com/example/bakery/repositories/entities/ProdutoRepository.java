@@ -19,4 +19,5 @@ public interface ProdutoRepository extends JpaRepository<Produto,Long> {
             "FROM produtos_restantes pr, produto p \n" +
             "WHERE pr.id_produto = p.id_produto;\n")
     List<ProdutosRestantesDTO> getProdutosRestantes();
+
 }

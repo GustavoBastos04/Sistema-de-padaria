@@ -29,46 +29,51 @@ JOIN
 GROUP BY
     c.cpf, c.nome;
 
+-- LUCRO POR VENDA
+-- pci: produto_consituido_ingrediente (*id_produto, id_ingrediente*, quantidade)
+-- fi: fornece_ingrediente (*fornecedor_cnpj, id_ingrediente*, quantidade, preco)
+-- v: venda (*id_venda*, valor, data_de_venda)
+-- cp: custo_produto -> subtabela
+-- iv: item_venda (*id_produto, id_venda*)
+-- p: produto (*id_produto*, nome, valor)
+-- COALESCE: lida com valores não nulos
+-- WITH: cria subtabelas
 
--- Lucro Geral por Venda
--- Lucro por produto
--- Lucro em determinado periodo 
--- WITH é utilizado para criar uma "subtabela"
-
--- Significado das siglas:
--- fie = fornece_item_estoque
--- pci = produto_constituido_ingrediente
--- i = ingredientes
--- iv = item_venda
--- v = venda
-
--- Lucro Geral por Venda
-WITH CustoVenda as (
-    SELECT 
-        iv.venda_id_venda,
-        SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
-    FROM 
-        item_venda as iv
-    JOIN 
-        produto_constituido_ingrediente as pci on iv.produto_id_produto = pci.produto_id_produto
-    JOIN 
-        ingrediente as i on pci.ingrediente_id_ingrediente = i.id_ingrediente
-    JOIN 
-        fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
-    GROUP BY 
-        iv.venda_id_venda
+WITH custo_produto AS (
+    SELECT
+        pci.id_produto,
+        SUM(pci.quantidade * fi.preco) AS custo_total
+    FROM
+        produto_constituido_ingrediente pci
+    INNER JOIN
+        fornece_ingrediente fi ON pci.id_ingrediente = fi.id_ingrediente
+    GROUP BY
+        pci.id_produto
+),
+lucro_por_venda AS (
+    SELECT
+        v.id_venda,
+        SUM(p.valor) AS receita_total,
+        SUM(COALESCE(cp.custo_total, 0)) AS custo_total,
+        SUM(p.valor) - SUM(COALESCE(cp.custo_total, 0)) AS lucro
+    FROM
+        venda v
+    INNER JOIN
+        item_venda iv ON v.id_venda = iv.id_venda
+    INNER JOIN
+        produto p ON iv.id_produto = p.id_produto
+    LEFT JOIN
+        custo_produto cp ON iv.id_produto = cp.id_produto
+    GROUP BY
+        v.id_venda
 )
-SELECT 
-    v.id_venda,
-	-- receita é o total pago na venda
-    v.valor as receita,
-    COALESCE(cv.custo_total_ingredientes, 0) as custo,
-    v.valor - COALESCE(cv.custo_total_ingredientes, 0) as lucro
-FROM 
-    venda as v
-LEFT JOIN 
-    CustoVenda as cv on v.id_venda = cv.venda_id_venda;
-
+SELECT
+    id_venda,
+    receita_total,
+    custo_total,
+    lucro
+FROM
+    lucro_por_venda;
 
 -- Lucro por Produto
 WITH CustoProduto as (
