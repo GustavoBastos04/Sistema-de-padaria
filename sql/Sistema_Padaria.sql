@@ -8,11 +8,8 @@ CREATE TABLE cliente (
     tipo_de_assinatura VARCHAR NOT NULL,
     telefone VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
-    logradouro VARCHAR NOT NULL,
-    numero VARCHAR NOT NULL,
     cep VARCHAR NOT NULL,
-    cidade VARCHAR NOT NULL,
-    uf VARCHAR NOT NULL
+    numero VARCHAR NOT NULL
 );
 
 CREATE TABLE venda (
@@ -57,11 +54,8 @@ CREATE TABLE fornecedor (
     nome VARCHAR NOT NULL,
     telefone VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
-    logradouro VARCHAR NOT NULL,
-    numero VARCHAR NOT NULL,
     cep VARCHAR NOT NULL,
-    cidade VARCHAR NOT NULL,
-    uf VARCHAR NOT NULL
+    numero VARCHAR NOT NULL
 );
 
 CREATE TABLE ingrediente (
