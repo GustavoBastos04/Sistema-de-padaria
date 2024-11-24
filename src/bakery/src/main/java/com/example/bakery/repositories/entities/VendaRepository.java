@@ -63,10 +63,48 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
             "FROM\n" +
             "    lucro_por_venda;\n")
     List<LucroGeralVendaDTO> getLucroGeralVenda();
-    /*
-    @Query(nativeQuery = true, value = "")
-    List<LucroProdutoDTO> getLucroProduto();
-    */
+
+    @Query(nativeQuery = true, value = "" +
+            "-- Lucro por Produto\n" +
+            "WITH CustoProduto AS (\n" +
+            "    SELECT \n" +
+            "        pci.id_produto,\n" +
+            "        SUM(fi.preco * pci.quantidade) AS custo_total_ingredientes\n" +
+            "    FROM \n" +
+            "        produto_constituido_ingrediente AS pci\n" +
+            "    JOIN \n" +
+            "        ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente\n" +
+            "    JOIN \n" +
+            "        fornece_ingrediente AS fi ON i.id_ingrediente = fi.id_ingrediente\n" +
+            "    GROUP BY \n" +
+            "        pci.id_produto\n" +
+            "), \n" +
+            "ReceitaProduto AS (\n" +
+            "    SELECT \n" +
+            "        iv.id_produto,\n" +
+            "        SUM(v.valor) AS receita_total\n" +
+            "    FROM \n" +
+            "        venda AS v\n" +
+            "    JOIN \n" +
+            "        item_venda AS iv ON v.id_venda = iv.id_venda\n" +
+            "    GROUP BY \n" +
+            "        iv.id_produto\n" +
+            ")\n" +
+            "SELECT \n" +
+            "    p.id_produto,\n" +
+            "    p.nome,\n" +
+            "    rp.receita_total AS receita,\n" +
+            "    COALESCE(cp.custo_total_ingredientes, 0) AS custo,\n" +
+            "    rp.receita_total - COALESCE(cp.custo_total_ingredientes, 0) AS lucro\n" +
+            "FROM \n" +
+            "    ReceitaProduto AS rp\n" +
+            "JOIN \n" +
+            "    produto AS p ON rp.id_produto = p.id_produto\n" +
+            "LEFT JOIN \n" +
+            "    CustoProduto AS cp ON rp.id_produto = cp.id_produto;\n" +
+            "\n")
+    List<LucroProdutoDTO> getLucroPorProduto();
+
     @Query(nativeQuery = true, value ="" +
             "WITH CustoVenda AS (\n" +
             "    SELECT \n" +

@@ -52,7 +52,7 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>desconto-cliente [GET]</li>
 <li>estoque-atual-ingrediente [GET]</li>
 <li>lucro-geral-venda [GET]</li>
-<li>[Inativo] lucro-geralproduto [GET]</li>
+<li> lucro-por-produto [GET]</li>
 <li>meio-pagamento [GET]</li>
 <li>produtos-restantes [GET]</li>
 <li>ingrediente-proximo-expirar?format=&days= [GET] - format = {days, weeks, months} e number={1,2,3,4,...}</li>
@@ -67,7 +67,4 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>Algumas funcionalidades estão indisponíveis no momento dado que o banco de dados está em fase de alterações</li>
 </ul>
 
-## Pendências:
-<ul>
-<li>Funcionalidade: Lucro por produto.  adicionar a Query em VendaRepository e "descomentar" em LucroProdutoController</li>
-</ul>
+

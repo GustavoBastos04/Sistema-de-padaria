@@ -75,53 +75,46 @@ SELECT
 FROM
     lucro_por_venda;
 
+
 -- Lucro por Produto
-WITH CustoProduto as (
+WITH CustoProduto AS (
     SELECT 
-        pci.produto_id_produto,
-        SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
+        pci.id_produto,
+        SUM(fi.preco * pci.quantidade) AS custo_total_ingredientes
     FROM 
-        produto_constituido_ingrediente as pci
+        produto_constituido_ingrediente AS pci
     JOIN 
-        ingrediente as i on pci.ingrediente_id_ingrediente = i.id_ingrediente
+        ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente
     JOIN 
-        fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
+        fornece_ingrediente AS fi ON i.id_ingrediente = fi.id_ingrediente
     GROUP BY 
-        pci.produto_id_produto
-), ReceitaProduto as (
+        pci.id_produto
+), 
+ReceitaProduto AS (
     SELECT 
-        iv.produto_id_produto,
-        SUM(v.valor) as receita_total
+        iv.id_produto,
+        SUM(v.valor) AS receita_total
     FROM 
-        venda as v
+        venda AS v
     JOIN 
-        item_venda as iv on v.id_venda = iv.venda_id_venda
+        item_venda AS iv ON v.id_venda = iv.id_venda
     GROUP BY 
-        iv.produto_id_produto
+        iv.id_produto
 )
 SELECT 
     p.id_produto,
     p.nome,
-    rp.receita_total as receita,
-    COALESCE(cp.custo_total_ingredientes, 0) as custo,
-    rp.receita_total - COALESCE(cp.custo_total_ingredientes, 0) as lucro
+    rp.receita_total AS receita,
+    COALESCE(cp.custo_total_ingredientes, 0) AS custo,
+    rp.receita_total - COALESCE(cp.custo_total_ingredientes, 0) AS lucro
 FROM 
-    ReceitaProduto as rp
+    ReceitaProduto AS rp
 JOIN 
-    Padaria.produto as p on rp.produto_id_produto = p.id_produto
+    produto AS p ON rp.id_produto = p.id_produto
 LEFT JOIN 
-    CustoProduto as cp on rp.produto_id_produto = cp.produto_id_produto;
+    CustoProduto AS cp ON rp.id_produto = cp.id_produto;
 
 
--- LUCRO POR VENDA
--- pci: produto_consituido_ingrediente (*id_produto, id_ingrediente*, quantidade)
--- fi: fornece_ingrediente (*fornecedor_cnpj, id_ingrediente*, quantidade, preco)
--- v: venda (*id_venda*, valor, data_de_venda)
--- cp: custo_produto -> subtabela
--- iv: item_venda (*id_produto, id_venda*)
--- p: produto (*id_produto*, nome, valor)
--- COALESCE: lida com valores não nulos
--- WITH: cria subtabelas
 
 -- Lucro em determinado período (no sistema as datas são customizáveis
 WITH CustoVenda AS (
