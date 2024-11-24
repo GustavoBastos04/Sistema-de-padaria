@@ -1,11 +1,14 @@
 package com.example.bakery.repositories.entities;
 
+import com.example.bakery.dtos.functionalitiesdtos.LucroDeterminadoPeriodoDTO;
 import com.example.bakery.dtos.functionalitiesdtos.LucroGeralVendaDTO;
 import com.example.bakery.dtos.functionalitiesdtos.LucroProdutoDTO;
 import com.example.bakery.entities.Venda;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface VendaRepository extends JpaRepository<Venda, Long> {
@@ -64,6 +67,40 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
     @Query(nativeQuery = true, value = "")
     List<LucroProdutoDTO> getLucroProduto();
     */
+    @Query(nativeQuery = true, value ="" +
+            "WITH CustoVenda AS (\n" +
+            "    SELECT \n" +
+            "        iv.id_venda,\n" +
+            "        SUM(pci.quantidade * fi.preco) AS custo_total_ingredientes\n" +
+            "    FROM \n" +
+            "        item_venda iv\n" +
+            "    INNER JOIN \n" +
+            "        produto_constituido_ingrediente pci ON iv.id_produto = pci.id_produto\n" +
+            "    INNER JOIN \n" +
+            "        fornece_ingrediente fi ON pci.id_ingrediente = fi.id_ingrediente\n" +
+            "    GROUP BY \n" +
+            "        iv.id_venda\n" +
+            "), Receita_Periodo AS (\n" +
+            "    SELECT\n" +
+            "        v.id_venda,\n" +
+            "        v.valor,\n" +
+            "        v.data_de_venda\n" +
+            "    FROM\n" +
+            "        venda v\n" +
+            "    WHERE \n" +
+            "        v.data_de_venda BETWEEN :begginingDate AND :endDate\n" +
+            ") \t\n" +
+            "SELECT\n" +
+            "    :begginingDate AS Data_Inicial,  -- Exibe a data inicial\n" +
+            "    :endDate AS Data_Final,    -- Exibe a data final\n" +
+            "    ROUND(SUM(rep.valor), 2) AS receita_total,\n" +
+            "    ROUND(SUM(COALESCE(cv.custo_total_ingredientes, 0)), 2) AS custo_total,\n" +
+            "    ROUND(SUM(rep.valor) - SUM(COALESCE(cv.custo_total_ingredientes, 0)), 2) AS lucro_total\n" +
+            "FROM\n" +
+            "    Receita_Periodo rep\n" +
+            "LEFT JOIN\n" +
+            "    CustoVenda cv ON rep.id_venda = cv.id_venda;\n")
+    List<LucroDeterminadoPeriodoDTO> getLucroDeterminadoPeriodo(@Param("begginingDate") Date begginingDate, @Param("endDate") Date endDate);
 }
 
 

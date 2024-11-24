@@ -113,30 +113,36 @@ LEFT JOIN
     CustoProduto as cp on rp.produto_id_produto = cp.produto_id_produto;
 
 
---v.data_de_venda BETWEEN '2024-12-01' AND '2024-12-12'
---Tem que colocar a data aqui, pensei em deixar uma variavel no lugar
--- Lucro em determinado periodo
+-- LUCRO POR VENDA
+-- pci: produto_consituido_ingrediente (*id_produto, id_ingrediente*, quantidade)
+-- fi: fornece_ingrediente (*fornecedor_cnpj, id_ingrediente*, quantidade, preco)
+-- v: venda (*id_venda*, valor, data_de_venda)
+-- cp: custo_produto -> subtabela
+-- iv: item_venda (*id_produto, id_venda*)
+-- p: produto (*id_produto*, nome, valor)
+-- COALESCE: lida com valores não nulos
+-- WITH: cria subtabelas
+
+-- Lucro em determinado período (no sistema as datas são customizáveis
 WITH CustoVenda AS (
     SELECT 
-        iv.venda_id_venda,
-        SUM(fie.preco * pci.quantidade) AS custo_total_ingredientes
+        iv.id_venda,
+        SUM(pci.quantidade * fi.preco) AS custo_total_ingredientes
     FROM 
-        Padaria.item_venda AS iv
-    JOIN 
-        Padaria.produto_constituido_ingrediente AS pci ON iv.produto_id_produto = pci.produto_id_produto
-    JOIN 
-        Padaria.ingrediente AS i ON pci.ingrediente_id_ingrediente = i.id_ingrediente
-    JOIN 
-        Padaria.fornece_item_estoque AS fie ON i.estoque_id_item = fie.estoque_id_item
+        item_venda iv
+    INNER JOIN 
+        produto_constituido_ingrediente pci ON iv.id_produto = pci.id_produto
+    INNER JOIN 
+        fornece_ingrediente fi ON pci.id_ingrediente = fi.id_ingrediente
     GROUP BY 
-        iv.venda_id_venda
+        iv.id_venda
 ), Receita_Periodo AS (
     SELECT
         v.id_venda,
         v.valor,
         v.data_de_venda
     FROM
-        Padaria.venda AS v
+        venda v
     WHERE 
         v.data_de_venda BETWEEN '2024-01-01' AND '2024-12-01'
 ) 	
@@ -147,9 +153,9 @@ SELECT
     ROUND(SUM(COALESCE(cv.custo_total_ingredientes, 0)), 2) AS custo_total,
     ROUND(SUM(rep.valor) - SUM(COALESCE(cv.custo_total_ingredientes, 0)), 2) AS lucro_total
 FROM
-    Receita_Periodo AS rep
+    Receita_Periodo rep
 LEFT JOIN
-    CustoVenda AS cv ON rep.id_venda = cv.venda_id_venda;
+    CustoVenda cv ON rep.id_venda = cv.id_venda;
 	
 -- Relatorio de meios de pagamento
 -- Quantidade de vendas por tipo de pagamento e valor total das vendas

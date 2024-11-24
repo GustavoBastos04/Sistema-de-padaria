@@ -57,6 +57,7 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>produtos-restantes [GET]</li>
 <li>ingrediente-proximo-expirar?format=&days= [GET] - format = {days, weeks, months} e number={1,2,3,4,...}</li>
 <li>ingrediente-vencido [GET]</li>
+<li>lucro-determinado-periodo?begin=&end= [GET] - begin e end devem ter valores na conveção java.sql.Date: yyyy-mm-dd</li>
 </ul>
 
 ## Importante:
@@ -69,5 +70,4 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 ## Pendências:
 <ul>
 <li>Funcionalidade: Lucro por produto.  adicionar a Query em VendaRepository e "descomentar" em LucroProdutoController</li>
-<li>Funcionalidade: fazer tudo de lucro em determinado período (lidar com passada de parâmetros)</li>
 </ul>
