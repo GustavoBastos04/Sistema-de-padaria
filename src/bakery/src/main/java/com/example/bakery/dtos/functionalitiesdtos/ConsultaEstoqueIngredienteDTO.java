@@ -1,6 +1,9 @@
 package com.example.bakery.dtos.functionalitiesdtos;
 
-public interface EstoqueAtualIngredienteDTO {
+import java.sql.Date;
+
+public interface ConsultaEstoqueIngredienteDTO {
     String getNome();
     Integer getQuantidade();
+    Date getData_validade();
 }

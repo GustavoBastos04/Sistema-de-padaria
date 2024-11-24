@@ -421,28 +421,32 @@ INSERT INTO produto_constituido_ingrediente (id_produto, id_ingrediente, quantid
 (20, 4, 15),      -- Açúcar
 (20, 18, 5);      -- Essência de Baunilha
 
--- Inserções na Tabela estoque
 INSERT INTO estoque VALUES
-(1, 500),       -- Farinha de Trigo
-(2, 130),       -- Fermento
-(3, 800),       -- Sal
-(4, 650),       -- Açúcar
-(5, 300),       -- Leite
-(6, 700),       -- Ovos
-(7, 330),       -- Manteiga
-(8, 450),       -- Chocolate em Pó
-(9, 250),       -- Polvilho
-(10, 200),      -- Queijo
-(11, 700),      -- Farinha de Milho
-(12, 550),      -- Creme de Leite
-(13, 380),      -- Leite Condensado
-(14, 250),      -- Frutas Secas
-(15, 500),      -- Farinha Integral
-(16, 650),      -- Gordura Vegetal
-(17, 450),      -- Amido de Milho
-(18, 250),      -- Essência de Baunilha
-(19, 300),      -- Cacau em Pó
-(20, 220);      -- Canela em Pó
+-- Expired products (dates before 23/11/2024)
+(1, 500, '2024-10-15'), -- Farinha de Trigo
+(2, 130, '2024-11-10'), -- Fermento
+(3, 800, '2024-11-20'), -- Sal
+(4, 650, '2024-11-01'), -- Açúcar
+
+-- Close to expiration (next 2-3 months)
+(5, 300, '2024-12-15'), -- Leite
+(6, 700, '2024-12-30'), -- Ovos
+(7, 330, '2025-01-15'), -- Manteiga
+(8, 450, '2025-01-30'), -- Chocolate em Pó
+(9, 250, '2024-12-25'), -- Polvilho
+(10, 200, '2025-01-10'), -- Queijo
+
+-- Long before expiration (6+ months ahead)
+(11, 700, '2025-06-15'), -- Farinha de Milho
+(12, 550, '2025-07-20'), -- Creme de Leite
+(13, 380, '2025-08-10'), -- Leite Condensado
+(14, 250, '2025-09-30'), -- Frutas Secas
+(15, 500, '2025-06-30'), -- Farinha Integral
+(16, 650, '2025-07-15'), -- Gordura Vegetal
+(17, 450, '2025-08-30'), -- Amido de Milho
+(18, 250, '2025-09-15'), -- Essência de Baunilha
+(19, 300, '2025-07-25'), -- Cacau em Pó
+(20, 220, '2025-08-20'); -- Canela em Pó
 
 INSERT INTO produtos_restantes VALUES
 (1, 20), -- Pão Francês

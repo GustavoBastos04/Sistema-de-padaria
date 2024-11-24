@@ -7,16 +7,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
 @RequestMapping("padaria")
-public class EstoqueAtualIngredienteController {
+public class IngredienteProximoExpirarController {
+
     @Autowired
     IngredienteRepository ingredienteRepository;
 
-    @GetMapping("estoque-atual-ingrediente")
-    public List<ConsultaEstoqueIngredienteDTO> getEstoqueAtualIngrediente(){
-        return ingredienteRepository.getEstoqueAtualIngrediente();
+    @GetMapping("ingrediente-proximo-expirar")
+    public List<ConsultaEstoqueIngredienteDTO> getIngredienteProximoExpirar(){
+        Date date = Date.valueOf(LocalDate.now());
+
+
+        return ingredienteRepository.getIngredienteProximoExpirar(date);
     }
+
 }
