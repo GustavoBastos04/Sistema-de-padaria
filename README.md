@@ -46,7 +46,7 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>venda [GET][POST]</li>
 <li>desconto-cliente [GET]</li>
 <li>estoque-atual-ingrediente [GET]</li>
-<li>[Inativo] lucro-geral-venda [GET]</li>
+<li>lucro-geral-venda [GET]</li>
 <li>[Inativo] lucro-geralproduto [GET]</li>
 <li>meio-pagamento [GET]</li>
 <li>produtos-restantes [GET]</li>
@@ -63,7 +63,6 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 
 ## Pendências:
 <ul>
-<li>Funcionalidade: Lucro Geral por Venda.  adicionar a Query em VendaRepository e "descomentar" em LucroGeralVendaController</li>
 <li>Funcionalidade: Lucro por produto.  adicionar a Query em VendaRepository e "descomentar" em LucroProdutoController</li>
 <li>Funcionalidade: fazer tudo de lucro em determinado período (lidar com passada de parâmetros)</li>
 </ul>

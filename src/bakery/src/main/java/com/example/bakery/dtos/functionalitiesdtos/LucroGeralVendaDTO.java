@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface LucroGeralVendaDTO {
     Long getId_venda();
-    BigDecimal getReceita();
-    BigDecimal getCusto();
+    BigDecimal getReceita_total();
+    BigDecimal getCusto_total();
     BigDecimal getLucro();
 }

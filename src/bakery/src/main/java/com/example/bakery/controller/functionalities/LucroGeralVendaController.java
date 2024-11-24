@@ -16,11 +16,8 @@ public class LucroGeralVendaController {
     @Autowired
     VendaRepository vendaRepository;
 
-    /*
     @GetMapping("lucro-geral-venda")
     public List<LucroGeralVendaDTO> getLucroGeralVenda(){
         return vendaRepository.getLucroGeralVenda();
     }
-
-     */
 }
