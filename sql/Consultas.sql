@@ -150,6 +150,46 @@ BEGIN
         CustoVenda as cv on rep.id_venda = cv.id_venda';
 END $$;
 
+
+/*
+WITH CustoVenda AS (
+    SELECT 
+        iv.venda_id_venda,
+        SUM(fie.preco * pci.quantidade) AS custo_total_ingredientes
+    FROM 
+        Padaria.item_venda AS iv
+    JOIN 
+        Padaria.produto_constituido_ingrediente AS pci ON iv.id_produto = pci.id_produto
+    JOIN 
+        Padaria.ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente
+    JOIN 
+        Padaria.fornece_item_estoque AS fie ON i.estoque_id_item = fie.estoque_id_item
+    GROUP BY 
+        iv.venda_id_venda
+), Receita_Periodo AS (
+    SELECT
+        v.id_venda,
+        v.valor,
+        v.data_de_venda
+    FROM
+        Padaria.venda AS v
+    WHERE 
+        v.data_de_venda BETWEEN '2024-01-01' AND '2024-12-01'
+) 	
+SELECT
+    '2024-01-01' AS Data_Inicial,   -- Exibe a data inicial
+    '2024-12-01' AS Data_Final,     -- Exibe a data final
+    rep.id_venda,
+    rep.valor AS receita,
+    COALESCE(cv.custo_total_ingredientes, 0) AS custo,
+    rep.valor - COALESCE(cv.custo_total_ingredientes, 0) AS lucro
+FROM
+    Receita_Periodo AS rep
+LEFT JOIN
+    CustoVenda AS cv ON rep.id_venda = cv.venda_id_venda;
+*/
+
+
 -- Relatorio de meios de pagamento
 -- Quantidade de vendas por tipo de pagamento e valor total das vendas
 SELECT p.tipo, count(p.tipo) AS qtd_vendas, Sum(v.valor) AS valor_total
