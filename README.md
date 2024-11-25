@@ -34,16 +34,16 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 ## Tutorial para uso:
 <ul>
 <li>no Postgres, criar database "padaria"</li>
-<li>Criação das tuplas exatamente como <a href="./sql/tabelas.txt">tabelas.txt</a></li>
-<li>Criação das tuplas exatamente como <a href="./sql/insercao.txt">insercao.txt</a></li>
+<li>Criação das tuplas exatamente como <a href="./sql/Sistema_Padaria.sql">Sistema_Padaria.sql</a></li>
+<li>Criação das tuplas exatamente como <a href="./sql/Insercao_Tuplas.sql">Insercao_Tuplas.sql</a></li>
 <li>Em Sistema-de-padaria/src/bakery/src/main/resources/application.properties, deve estar <a href="./sql/application-properties.txt">Desse jeito</a></li>
 <li>Agora é só dar run no projeto!</li>
 </ul>
 
 ## GETs e POSTs:
 <ul>
-<li>cliente [GET][POST]</li>
-<li>fornecedor [GET][POST]</li>
+<li>cliente [GET]</li>
+<li>fornecedor [GET]</li>
 <li>ingrediente [GET][POST]</li>
 <li>pagamento [GET][POST]</li>
 <li>produto-constituido-ingrediente [GET][POST]</li>
