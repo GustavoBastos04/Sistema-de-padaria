@@ -1,5 +1,29 @@
 SET search_path TO Padaria, public;
 
+-- Inserções para os endereços do CEP
+INSERT INTO endereco (cep, logradouro, cidade, uf) VALUES
+('04500-123', 'Avenida Santo Amaro', 'São Paulo', 'SP'),
+('22640-100', 'Avenida das Américas', 'Rio de Janeiro', 'RJ'),
+('21050-200', 'Avenida Brasil', 'Rio de Janeiro', 'RJ'),
+('30190-120', 'Rua da Serra', 'Belo Horizonte', 'MG'),
+('80010-200', 'Rua XV de Novembro', 'Curitiba', 'PR'),
+('90010-100', 'Rua dos Andradas', 'Porto Alegre', 'RS'),
+('70070-120', 'Setor Comercial Sul', 'Brasília', 'DF'),
+('40010-110', 'Avenida Sete de Setembro', 'Salvador', 'BA'),
+('51020-300', 'Avenida Boa Viagem', 'Recife', 'PE'),
+('66010-140', 'Avenida Presidente Vargas', 'Belém', 'PA'),
+('88010-100', 'Rua Felipe Schmidt', 'Florianópolis', 'SC'),
+('74010-010', 'Avenida Goiás', 'Goiânia', 'GO'),
+('60010-100', 'Rua Major Facundo', 'Fortaleza', 'CE'),
+('65010-100', 'Rua Grande', 'São Luís', 'MA'),
+('29010-100', 'Avenida Jerônimo Monteiro', 'Vitória', 'ES'),
+('69010-100', 'Avenida Eduardo Ribeiro', 'Manaus', 'AM'),
+('58010-100', 'Avenida Epitácio Pessoa', 'João Pessoa', 'PB'),
+('69900-100', 'Rua Benjamin Constant', 'Rio Branco', 'AC'),
+('69300-100', 'Avenida Getúlio Vargas', 'Boa Vista', 'RR'),
+('64010-100', 'Avenida Frei Serafim', 'Teresina', 'PI'),
+('59010-100', 'Avenida Rio Branco', 'Natal', 'RN');
+
 -- Inserções de Clientes para a Tabela Padaria.cliente
 INSERT INTO Padaria.cliente VALUES 
 ('123.456.789-01', 'Maria Silva Santos', 'Premium', '(11) 98765-4321', 'maria.santos@email.com', '04500-123', '150'),

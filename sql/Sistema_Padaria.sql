@@ -2,6 +2,14 @@ SET search_path TO Padaria, public;
 
 CREATE SCHEMA Padaria;
 
+CREATE TABLE endereco (
+	cep VARCHAR NOT NULL,
+	logradouro VARCHAR NOT NULL,
+	cidade VARCHAR NOT NULL,
+	uf VARCHAR NOT NULL,
+	PRIMARY KEY (cep)
+);
+
 CREATE TABLE cliente (
     cpf VARCHAR NOT NULL PRIMARY KEY,
     nome VARCHAR NOT NULL,
@@ -9,7 +17,8 @@ CREATE TABLE cliente (
     telefone VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     cep VARCHAR NOT NULL,
-    numero VARCHAR NOT NULL
+    numero VARCHAR NOT NULL,
+    FOREIGN KEY (cep) REFERENCES endereco(cep)
 );
 
 CREATE TABLE venda (
@@ -55,7 +64,8 @@ CREATE TABLE fornecedor (
     telefone VARCHAR NOT NULL,
     email VARCHAR NOT NULL,
     cep VARCHAR NOT NULL,
-    numero VARCHAR NOT NULL
+    numero VARCHAR NOT NULL,
+    FOREIGN KEY (cep) REFERENCES endereco(cep)
 );
 
 CREATE TABLE ingrediente (
