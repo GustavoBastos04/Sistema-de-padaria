@@ -1,5 +1,6 @@
 package com.example.bakery.repositories.entities;
 
+import com.example.bakery.dtos.functionalitiesdtos.ClienteDTO;
 import com.example.bakery.entities.Cliente;
 import com.example.bakery.dtos.functionalitiesdtos.DescontoClienteDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,13 +12,8 @@ import java.util.List;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
 
-    @Query(nativeQuery = true, value = "SELECT * FROM cliente;")
-    List<Cliente> getClientes();
-
-    @Query(nativeQuery = true, value =
-            "SELECT * FROM cliente where cliente.tipo_de_assinatura = :tipo_de_assinatura")
-
-    List<Cliente> findClientByType(String tipo_de_assinatura);
+    @Query(nativeQuery = true, value = "SELECT  c.cpf, c.nome, c.tipo_de_assinatura, c.telefone, c.email, c.cep, e.logradouro || ', ' || c.numero AS endereco,e.cidade, e.uf FROM cliente  AS c INNER JOIN endereco AS e ON  c.cep = e.cep;")
+    List<ClienteDTO> getClientes();
 
     @Query(nativeQuery = true, value= """
 -- Desconto para Cliente Cadastrado
