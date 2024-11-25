@@ -1,7 +1,3 @@
-SET search_path TO Padaria, public;
-
-CREATE SCHEMA Padaria;
-
 CREATE TABLE endereco (
 	cep VARCHAR NOT NULL,
 	logradouro VARCHAR NOT NULL,

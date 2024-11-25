@@ -1,4 +1,3 @@
-SET search_path TO Padaria, public;
 
 -- Inserções para os endereços do CEP
 INSERT INTO endereco (cep, logradouro, cidade, uf) VALUES
@@ -25,7 +24,7 @@ INSERT INTO endereco (cep, logradouro, cidade, uf) VALUES
 ('59010-100', 'Avenida Rio Branco', 'Natal', 'RN');
 
 -- Inserções de Clientes para a Tabela Padaria.cliente
-INSERT INTO Padaria.cliente VALUES 
+INSERT INTO cliente VALUES 
 ('123.456.789-01', 'Maria Silva Santos', 'Premium', '(11) 98765-4321', 'maria.santos@email.com', '04500-123', '150'),
 ('987.654.321-09', 'João Pedro Oliveira', 'Basic', '(21) 97654-3210', 'joao.oliveira@email.com', '22640-100', '85'),
 ('456.789.123-45', 'Ana Beatriz Rocha', 'Premium', '(31) 96543-2109', 'ana.rocha@email.com', '30190-120', '42'),
@@ -48,7 +47,7 @@ INSERT INTO Padaria.cliente VALUES
 ('321.654.210-98', 'Gabriel Costa Oliveira', 'Basic', '(84) 99876-5432', 'gabriel.oliveira@email.com', '59010-100', '234');
 
 -- Inserções de Vendas para a Tabela Padaria.venda
-INSERT INTO Padaria.venda (id_venda, valor) VALUES 
+INSERT INTO venda (id_venda, valor) VALUES 
 (1,35.50),
 (2,22.75),
 (3,47.30),
@@ -71,7 +70,7 @@ INSERT INTO Padaria.venda (id_venda, valor) VALUES
 (20,67.50);
 
 -- Inserções de Produtos para a Tabela Padaria.produto
-INSERT INTO Padaria.produto  VALUES 
+INSERT INTO produto  VALUES 
 (1, 'Pão Francês', 0.75),
 (2, 'Pão de Leite', 8.50),
 (3, 'Croissant', 5.90),
@@ -94,7 +93,7 @@ INSERT INTO Padaria.produto  VALUES
 (20, 'Pastel de Nata', 5.90);
 
 -- Inserções de Cliente_Gera_Venda
-INSERT INTO Padaria.cliente_gera_venda VALUES 
+INSERT INTO cliente_gera_venda VALUES 
 ('123.456.789-01', 1),  -- Maria Silva Santos - Venda de R$ 35,50
 ('987.654.321-09', 2),  -- João Pedro Oliveira - Venda de R$ 22,75
 ('456.789.123-45', 3),  -- Ana Beatriz Rocha - Venda de R$ 47,30
@@ -117,7 +116,7 @@ INSERT INTO Padaria.cliente_gera_venda VALUES
 ('321.654.210-98', 20); -- Gabriel Costa Oliveira - Venda de R$ 67,50
 
 -- Inserções para a tabela Padaria.item_venda
-INSERT INTO Padaria.item_venda VALUES
+INSERT INTO item_venda VALUES
 -- Venda 1 (35.50) - Pão Francês e Bolo de Chocolate
 (1, 1),  -- Pão Francês
 (4, 1),  -- Bolo de Chocolate
@@ -196,7 +195,7 @@ INSERT INTO Padaria.item_venda VALUES
 (17, 20); -- Quiche de Legumes
 
 -- Inserções de Pagamentos para a Tabela Padaria.pagamento
-INSERT INTO Padaria.pagamento VALUES 
+INSERT INTO pagamento VALUES 
 ('123.456.789-01', 'Cartão de Crédito', 1),
 ('987.654.321-09', 'Cartão de Débito', 2),
 ('456.789.123-45', 'PIX', 3),
@@ -219,7 +218,7 @@ INSERT INTO Padaria.pagamento VALUES
 ('321.654.210-98', 'PIX', 20);
 
 -- Inserções de Fornecedores para a Tabela Padaria.fornecedor
-INSERT INTO Padaria.fornecedor VALUES 
+INSERT INTO fornecedor VALUES 
 ('12.345.678/0001-90', 'Farinha & Cia Ltda', '(11) 3456-7890', 'contato@farinhaecia.com.br', '04500-123', '250'),
 ('23.456.789/0001-81', 'Padaria Ingredientes Atacado', '(21) 2345-6789', 'vendas@padariainsumos.com.br', '21050-200', '750'),
 ('34.567.890/0001-72', 'Doces e Massas Distribuidora', '(31) 3456-7890', 'comercial@docesmassas.com.br', '30190-120', '480'),
@@ -242,7 +241,7 @@ INSERT INTO Padaria.fornecedor VALUES
 ('01.234.567/0002-00', 'Padaria Plus Fornecimentos', '(84) 0123-4567', 'comercial@padariaplus.com.br', '59010-100', '560');
 
 -- Inserções de Ingredientes para a Tabela Padaria.ingrediente
-INSERT INTO Padaria.ingrediente VALUES 
+INSERT INTO ingrediente VALUES 
 (1, 'Farinha de Trigo'),
 (2, 'Fermento'),
 (3, 'Sal'),
@@ -265,7 +264,7 @@ INSERT INTO Padaria.ingrediente VALUES
 (20, 'Canela em Pó');
 
 -- Inserções de fornece_ingredientes
-INSERT INTO Padaria.fornece_ingrediente VALUES 
+INSERT INTO fornece_ingrediente VALUES 
 ('12.345.678/0001-90', 1, 100, 10.50),
 ('23.456.789/0001-81', 1, 200, 9.80),
 
@@ -327,7 +326,7 @@ INSERT INTO Padaria.fornece_ingrediente VALUES
 ('78.901.234/0001-36', 20, 130, 12.00);
 
 -- Inserções na Tabela produto_constituido_ingrediente com quantidades para uma única unidade
-INSERT INTO Padaria.produto_constituido_ingrediente (id_produto, id_ingrediente, quantidade) VALUES
+INSERT INTO produto_constituido_ingrediente (id_produto, id_ingrediente, quantidade) VALUES
 -- Pão Francês
 (1, 1, 100),      -- Farinha de Trigo
 (1, 2, 5),        -- Fermento
@@ -445,7 +444,7 @@ INSERT INTO Padaria.produto_constituido_ingrediente (id_produto, id_ingrediente,
 (20, 4, 15),      -- Açúcar
 (20, 18, 5);      -- Essência de Baunilha
 
-INSERT INTO Padaria.estoque VALUES
+INSERT INTO estoque VALUES
 -- Expired products (dates before 23/11/2024)
 (1, 500, '2024-10-15'), -- Farinha de Trigo
 (2, 130, '2024-11-10'), -- Fermento
@@ -472,7 +471,7 @@ INSERT INTO Padaria.estoque VALUES
 (19, 300, '2025-07-25'), -- Cacau em Pó
 (20, 220, '2025-08-20'); -- Canela em Pó
 
-INSERT INTO Padaria.produtos_restantes VALUES
+INSERT INTO produtos_restantes VALUES
 (1, 20), -- Pão Francês
 (2, 30),  -- Pão de Leite
 (3, 10),  -- Croissant
