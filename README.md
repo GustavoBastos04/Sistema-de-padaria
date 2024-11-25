@@ -42,13 +42,13 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 
 ## GETs e POSTs:
 <ul>
-<li>cliente [GET]</li>
-<li>fornecedor [GET]</li>
+<li>cliente [GET][POST] - front-end envia JSON tal que <i>{"cpf", "nome","tipo_de_assinatura","telefone","email","cep","cidade","uf","logradouro","numero"}</i>, com todos os atributos string</li>
+<li>fornecedor [GET][POST] - front-end envia JSON tal que <i>{"nome","telefone","email","cep","cidade","uf","cnpj","logradouro","numero"}</i></li>
 <li>ingrediente [GET][POST]</li>
 <li>pagamento [GET][POST]</li>
-<li>produto-constituido-ingrediente [GET][POST]</li>
-<li>produto [GET][POST]</li>
-<li>venda [GET][POST]</li>
+<li>produto-constituido-ingrediente [GET]</li>
+<li>produto [GET]</li>
+<li>venda [GET]</li>
 <li>desconto-cliente [GET]</li>
 <li>estoque-atual-ingrediente [GET]</li>
 <li>lucro-geral-venda [GET]</li>
