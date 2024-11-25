@@ -37,6 +37,7 @@ GROUP BY
 -- iv = item_venda
 -- v = venda
 
+
 -- Lucro Geral por Venda
 WITH CustoVenda as (
     SELECT 
@@ -55,139 +56,93 @@ WITH CustoVenda as (
 )
 SELECT 
     v.id_venda,
-	-- receita é o total pago na venda
-    v.valor as receita,
-    COALESCE(cv.custo_total_ingredientes, 0) as custo,
-    v.valor - COALESCE(cv.custo_total_ingredientes, 0) as lucro
+    v.valor as Valor_que_Cliente_Gastou,
+    COALESCE(cv.custo_total_ingredientes, 0) as Custo_para_Produzir_Cliente_Consumiu,
+    v.valor - COALESCE(cv.custo_total_ingredientes, 0) as Lucro
 FROM 
     venda as v
 LEFT JOIN 
     CustoVenda as cv on v.id_venda = cv.id_venda;
 
-
 -- Lucro por Produto
-WITH CustoProduto as (
+WITH CustoProduto AS (
     SELECT 
         pci.id_produto,
-        SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
+        SUM(fi.preco * pci.quantidade) AS custo_total_ingredientes
     FROM 
-        produto_constituido_ingrediente as pci
+        produto_constituido_ingrediente AS pci
     JOIN 
-        ingrediente as i on pci.id_ingrediente = i.id_ingrediente
+        ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente
     JOIN 
-        fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
+        fornece_ingrediente AS fi ON fi.id_ingrediente = i.id_ingrediente
     GROUP BY 
         pci.id_produto
-), ReceitaProduto as (
+), ReceitaProduto AS (
     SELECT 
         iv.id_produto,
-        SUM(v.valor) as receita_total
+        SUM(p.valor) AS receita_total
     FROM 
-        venda as v
+        item_venda AS iv
     JOIN 
-        item_venda as iv on v.id_venda = iv.id_venda
+        produto AS p ON iv.id_produto = p.id_produto
+    JOIN 
+        venda AS v ON iv.id_venda = v.id_venda
     GROUP BY 
         iv.id_produto
 )
 SELECT 
     p.id_produto,
     p.nome,
-    rp.receita_total as receita,
-    COALESCE(cp.custo_total_ingredientes, 0) as custo,
-    rp.receita_total - COALESCE(cp.custo_total_ingredientes, 0) as lucro
+    COALESCE(rp.receita_total, 0) AS Valor_Vendido,
+    COALESCE(cp.custo_total_ingredientes, 0) AS Valor_Gasto_para_Produzir,
+    COALESCE(rp.receita_total, 0) - COALESCE(cp.custo_total_ingredientes, 0) AS lucro
 FROM 
-    ReceitaProduto as rp
-JOIN 
-    Padaria.produto as p on rp.id_produto = p.id_produto
+    produto AS p
 LEFT JOIN 
-    CustoProduto as cp on rp.id_produto = cp.id_produto;
-
+    ReceitaProduto AS rp ON p.id_produto = rp.id_produto
+LEFT JOIN 
+    CustoProduto AS cp ON p.id_produto = cp.id_produto;
 
 --v.data_de_venda BETWEEN '2024-12-01' AND '2024-12-12'
 --Tem que colocar a data aqui, pensei em deixar uma variavel no lugar
 -- Lucro em determinado periodo
-DO $$ 
-DECLARE
-    data_inicial DATE := '2024-01-01';
-    data_final DATE := '2024-12-01';
-BEGIN
-    EXECUTE '
-	WITH CustoVenda as (
-        SELECT 
-            iv.venda_id_venda,
-            SUM(fie.preco * pci.quantidade) as custo_total_ingredientes
-        FROM 
-            Padaria.item_venda as iv
-        JOIN 
-            Padaria.produto_constituido_ingrediente as pci on iv.id_produto = pci.id_produto
-        JOIN 
-            Padaria.ingrediente as i on pci.id_ingrediente = i.id_ingrediente
-        JOIN 
-            Padaria.fornece_item_estoque as fie on i.estoque_id_item = fie.estoque_id_item
-        GROUP BY 
-            iv.id_venda
-    ), Receita_Periodo as (
-        SELECT
-            v.id_venda,
-            v.valor,
-            v.data_de_venda
-        FROM
-            Padaria.venda as v
-        WHERE 
-            v.data_de_venda BETWEEN' || quote_literal(data_inicial) || 'AND' || quote_literal(data_final) ||'
-    ) 	
-    SELECT
-		-- Exibir o período selecionado
-		''' || data_inicial || ''' AS Data_Inicial,  -- Exibe a data inicial
-        ''' || data_final || ''' AS Data_Final,    -- Exibe a data final
-        rep.id_venda,
-        rep.valor as receita,
-        COALESCE(cv.custo_total_ingredientes, 0) as custo,
-        rep.valor - COALESCE(cv.custo_total_ingredientes, 0) as lucro
-    FROM
-        Receita_Periodo as rep
-    LEFT JOIN
-        CustoVenda as cv on rep.id_venda = cv.id_venda';
-END $$;
-
-
-/*
 WITH CustoVenda AS (
     SELECT 
-        iv.venda_id_venda,
+        iv.id_venda,
         SUM(fie.preco * pci.quantidade) AS custo_total_ingredientes
     FROM 
-        Padaria.item_venda AS iv
+        item_venda AS iv
     JOIN 
-        Padaria.produto_constituido_ingrediente AS pci ON iv.id_produto = pci.id_produto
+        produto_constituido_ingrediente AS pci ON iv.id_produto = pci.id_produto
     JOIN 
-        Padaria.ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente
+        ingrediente AS i ON pci.id_ingrediente = i.id_ingrediente
     JOIN 
-        Padaria.fornece_item_estoque AS fie ON i.estoque_id_item = fie.estoque_id_item
+        fornece_ingrediente AS fie ON i.id_ingrediente = fie.id_ingrediente
     GROUP BY 
-        iv.venda_id_venda
+        iv.id_venda
 ), Receita_Periodo AS (
     SELECT
         v.id_venda,
         v.valor,
         v.data_de_venda
     FROM
-        Padaria.venda AS v
+        venda AS v
     WHERE 
         v.data_de_venda BETWEEN '2024-01-01' AND '2024-12-01'
 ) 	
 SELECT
     '2024-01-01' AS Data_Inicial,   -- Exibe a data inicial
     '2024-12-01' AS Data_Final,     -- Exibe a data final
-    rep.id_venda,
-    rep.valor AS receita,
-    COALESCE(cv.custo_total_ingredientes, 0) AS custo,
-    rep.valor - COALESCE(cv.custo_total_ingredientes, 0) AS lucro
+    SUM(rep.valor) AS total_entrada,  -- Soma das receitas
+    SUM(COALESCE(cv.custo_total_ingredientes, 0)) AS total_saida,  -- Soma dos custos
+    SUM(rep.valor) - SUM(COALESCE(cv.custo_total_ingredientes, 0)) AS lucro  -- Subtração entre receita e custo
 FROM
     Receita_Periodo AS rep
 LEFT JOIN
-    CustoVenda AS cv ON rep.id_venda = cv.venda_id_venda;
-*/
+    CustoVenda AS cv ON rep.id_venda = cv.id_venda
+GROUP BY
+    Data_Inicial, Data_Final;
+
 
 
 -- Relatorio de meios de pagamento
@@ -197,6 +152,7 @@ FROM Padaria.pagamento AS p, Padaria.venda AS v
 WHERE p.id_venda = v.id_venda  
 GROUP BY p.tipo
 ORDER BY valor_total DESC;
+
 
 -- Estoque
 SELECT i.nome, e.quantidade, e.data_validade 
@@ -222,15 +178,3 @@ ORDER BY e.data_validade;
 SELECT p.nome, pr.quantidade
 FROM padaria.produtos_restantes pr, padaria.produto p 
 WHERE pr.id_produto = p.id_produto;
-
-
-
-
-
-
-
-
-
-
-
-
