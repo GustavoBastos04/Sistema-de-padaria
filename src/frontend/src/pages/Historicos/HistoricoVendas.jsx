@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemVenda from "../../components/ListItems/ItemVenda.jsx";
-import SearchInput from "../../components/SearchInputs/SearchInput.jsx";
-import vendasFakeList from '../../static/vendasFakeList.js'
-
+import { api } from '../../services/api' 
+import DateSearchInput from "../../components/SearchInputs/DateSearchInput.jsx";
 
 function HistoricoVendas() {
+ 
+    const [sales, setSales] = useState([])
+
+    const [startDate, setStartDate] = useState("")
+    const [endDate, setEndDate] = useState("")
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -14,24 +18,49 @@ function HistoricoVendas() {
     const indexOfLastItem = currentPage * itensPerPage
     const indexOfFirstItem = indexOfLastItem - itensPerPage
     
-    const filteredItems = vendasFakeList.filter((item) => item.data.toLowerCase().includes(searchItem))
-    const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
+    const filteredItems = sales.filter((item) => {
+        const item_date = new Date(item.data_de_venda)
+        const isDateInRange =
+            (!startDate || item_date >= new Date(startDate)) &&
+            (!endDate || item_date <= new Date(endDate))
+        const matchesSearch = item?.id_venda?.toString().toLowerCase().includes(searchItem) ||
+                              item?.valor?.toString().toLowerCase().includes(searchItem)
+        return isDateInRange && matchesSearch
+    })
+    
 
+    const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
     const totalPages = Math.ceil(filteredItems.length/itensPerPage)
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
 
-    const handleSearch = (term) => {
-        setSearchItem(term.toLowerCase())
+    const handleDateSearch = (start, end) => {
+        setStartDate(start)
+        setEndDate(end)
         setCurrentPage(1)
     }
 
+    async function loadSales() {
+        const response = await api.get('venda');
+        if (Array.isArray(response.data)) {
+            const parsedSales = response.data.map((item) => ({
+                ...item,
+                data_de_venda: new Date(item.data_de_venda),
+            }));
+            setSales(parsedSales)
+        }
+    }    
+
+    useEffect(() => {
+        loadSales()
+    }, [])
+
     return (
         <div>
-            <SearchInput string="data" onSearch={handleSearch}/>
-            <Table className="striped bordered hover">
+            <DateSearchInput onSearch={handleDateSearch}/>
+            <Table>
                 <thead>
                     <tr>
                         <th>ID da venda</th>
@@ -47,7 +76,7 @@ function HistoricoVendas() {
                                 key={item.id} 
                                 id_venda={item.id_venda}
                                 valor={item.valor}
-                                data={item.data}
+                                data_de_venda={item.data_de_venda}
                                 flag={1}
                                 />
                             )

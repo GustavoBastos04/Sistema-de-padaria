@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import {Table, Button} from "react-bootstrap";
-import ItemProduto from "../components/ListItems/ItemProduto.jsx";
-import SearchInput from "../components/SearchInputs/SearchInput.jsx";
-import { api } from "../services/api.js";
+import { useEffect, useState } from "react"
+import {Table, Button} from "react-bootstrap"
+import ItemProduto from "../components/ListItems/ItemProduto.jsx"
+import SearchInput from "../components/SearchInputs/SearchInput.jsx"
+import { api } from "../services/api.js"
 
 function Produtos() {
 
     const [products, setProducts] = useState([])
-    const [qtd, setQtd] = useState([])
+    const [info, setInfo] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -33,8 +33,8 @@ function Produtos() {
     async function loadProducts() {
         const items = []
         try {
-            const products = await api.get('produto'); // Supondo retorno com a propriedade `data`
-            const qtd = await api.get('produtos-restantes'); // Supondo retorno com a propriedade `data`
+            const products = await api.get('produto')
+            const qtd = await api.get('produtos-restantes')
     
             if (Array.isArray(products.data) && Array.isArray(qtd.data)) {
                 products.data.forEach(item => {
@@ -45,7 +45,7 @@ function Produtos() {
                             valor: item.valor,
                             quantidade: found.quantidade
                         }
-                    items.push(newItem)
+                        items.push(newItem)
                     }
                 });
             } else {
@@ -63,8 +63,8 @@ function Produtos() {
 
     return (
         <div>
-            <SearchInput string="nome" onSearch={handleSearch}/>
-            <Table className="striped bordered hover">
+            <SearchInput string="nome do produto" onSearch={handleSearch}/>
+            <Table>
                 <thead>
                     <tr>
                         <th>Nome</th>

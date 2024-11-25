@@ -1,50 +1,67 @@
-import { useState } from "react";
-import {Table, Button} from "react-bootstrap"
-import ItemPagamento from "../../components/ListItems/ItemPagamento.jsx";
-import SearchInput from "../../components/SearchInputs/SearchInput.jsx";
-import pagamentosFakeList from '../../static/pagamentosFakeList.js'
+import { Card } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import { PieChart } from '@mui/x-charts/PieChart'
+import { BarChart } from '@mui/x-charts/BarChart'
+import { api } from '../../services/api'
 
 function HistoricoPagamentos() {
 
-    const [currentPage, setCurrentPage] = useState(1)
-    const [searchItem, setSearchItem] = useState("")
-    const itensPerPage = 10
+    const [pieData, setPieData] = useState([])
+    const [barData, setBarData] = useState({xAxis: [], series: []})
 
-    const indexOfLastItem = currentPage * itensPerPage
-    const indexOfFirstItem = indexOfLastItem - itensPerPage
-    
-    const filteredItems = pagamentosFakeList.filter((item) => item.forma.toLowerCase().includes(searchItem))
-    const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
-
-    const totalPages = Math.ceil(filteredItems.length/itensPerPage)
-
-    const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber)
+    async function loadPayments() {
+        try {
+            const response = await api.get('meio-pagamento')
+            if (Array.isArray(response.data)) {
+                const pieData = response.data.map((item, index) => ({
+                    id: index,
+                    value: item.qtd_vendas,
+                    label: item.tipo,
+                }))
+                const barData = {
+                    xAxis: response.data.map((item) => item.tipo),
+                    series: response.data.map((item) => item.valor_total),
+                }
+                return {pieData, barData}
+            }
+            return {pieData: [], barData: {xAxis: [], series: []}}
+        } catch (error) {
+            console.error("Erro ao carregar dados: ", error)
+            return {pieData: [], barData: {xAxis: [], series: []}}
+        }
     }
 
-    const handleSearch = (term) => {
-        setSearchItem(term.toLowerCase())
-        setCurrentPage(1)
-    }
+    useEffect(() => {
+        loadPayments().then(({pieData, barData}) => {
+            setPieData(pieData)
+            setBarData(barData)
+        })
+    }, [])
 
     return (
-        <div className="d-flex justify-content-center align-items-center">
-            <PieChart
-            series={[
-                {
-                data: [
-                    { id: 0, value: 5, label: 'Pix' },
-                    { id: 1, value: 5, label: 'Cartão de crédito' },
-                    { id: 2, value: 3, label: 'Dinheiro' },
-                    { id: 3, value: 3, label: 'V.A (Vale Alimentação)' },
-                    { id: 4, value: 4, label: 'Cartão de débito' },
-                ],
-                },
-            ]}
-            width={800}
-            height={400}
-            />
+        <div className="d-flex gap-4 justify-content-center align-items-center vh-100">
+            <Card className="shadow mb-4">
+                <Card.Body>
+                    <Card.Title className="text-center"> Distribuição dos meios de pagamento </Card.Title>
+                    <PieChart
+                    series={[{ data: pieData }]}
+                    width={700}
+                    height={400}
+                />
+                </Card.Body>
+            </Card>
+            <Card className="shadow mb-4">
+                <Card.Body>
+                    <Card.Title className="text-center">Valores totais de cada meio de pagamento</Card.Title>
+                    <BarChart
+                    xAxis={[{ scaleType: 'band', data: barData.xAxis }]}
+                    series={[{ data: barData.series }]}
+                    width={700}
+                    height={400}    
+                    />
+                </Card.Body>
+            </Card>
+
         </div>
     )
 }

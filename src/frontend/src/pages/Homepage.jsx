@@ -4,7 +4,7 @@ import {Button} from "react-bootstrap";
 
 function Homepage() {
 
-    const [ingredientIds, setIngredientIds] = useState([""]); // Estado para armazenar os IDs dos ingredientes
+    const [ingredientIds, setIngredientIds] = useState([""]);
 
     const handleChange = (index, event) => {
         const values = [...ingredientIds];
@@ -13,12 +13,12 @@ function Homepage() {
     };
 
     const handleAddIngredient = () => {
-        setIngredientIds([...ingredientIds, ""]); // Adiciona um novo campo
+        setIngredientIds([...ingredientIds, ""]);
     };
 
     const handleRemoveIngredient = (index) => {
         const values = [...ingredientIds];
-        values.splice(index, 1); // Remove o campo selecionado
+        values.splice(index, 1);
         setIngredientIds(values);
     };
 

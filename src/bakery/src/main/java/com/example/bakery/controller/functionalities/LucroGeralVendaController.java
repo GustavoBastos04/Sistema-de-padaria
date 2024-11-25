@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.example.bakery.dtos.functionalitiesdtos.LucroGeralVendaDTO;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("padaria")
 public class LucroGeralVendaController {

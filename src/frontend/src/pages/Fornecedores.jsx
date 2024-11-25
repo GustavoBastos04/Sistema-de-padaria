@@ -41,8 +41,8 @@ function Fornecedores() {
 
     return (
         <div>
-            <SearchInput string="nome" onSearch={handleSearch}/>
-            <Table className="striped bordered hover">
+            <SearchInput string="nome do fornecedor" onSearch={handleSearch}/>
+            <Table>
                 <thead>
                     <tr>
                         <th>Nome</th>
