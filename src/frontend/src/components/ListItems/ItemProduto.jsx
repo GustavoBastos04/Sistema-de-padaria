@@ -5,7 +5,7 @@ function ItemProduto(props){
     return (
         <tr>
             <td>{props.nome}</td>
-            <td>{props.valor}</td>
+            <td>R${props.valor}</td>
             <td>{props.quantidade}</td>
             <td className="text-end">
                 { props.flag === 1 && (

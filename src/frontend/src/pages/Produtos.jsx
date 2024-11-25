@@ -70,7 +70,6 @@ function Produtos() {
                         <th>Nome</th>
                         <th>Valor unitário</th>
                         <th>Quantidade</th>
-                        <th className="text-end">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
