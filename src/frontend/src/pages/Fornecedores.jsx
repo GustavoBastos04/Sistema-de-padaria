@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemFornecedor from "../components/ListItems/ItemFornecedor.jsx";
-import SearchInput from "../components/SearchInput/SearchInput.jsx";
-import fornecedoresFakeList from '../static/fornecedoresFakeList.js'
+import SearchInput from "../components/SearchInputs/SearchInput.jsx";
+import { api } from "../services/api.js";
 
 function Fornecedores() {
+
+    const [suppliers, setSupliers] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -13,7 +15,7 @@ function Fornecedores() {
     const indexOfLastItem = currentPage * itensPerPage
     const indexOfFirstItem = indexOfLastItem - itensPerPage
     
-    const filteredItems = fornecedoresFakeList.filter((item) => item.nome.toLowerCase().includes(searchItem))
+    const filteredItems = suppliers.filter((item) => item.nome.toLowerCase().includes(searchItem))
     const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
 
     const totalPages = Math.ceil(filteredItems.length/itensPerPage)
@@ -27,6 +29,16 @@ function Fornecedores() {
         setCurrentPage(1)
     }
     
+    async function loadSuppliers() {
+        const response = await api.get('fornecedor')
+        console.log(response.data)
+        setSupliers(response.data)
+    }
+
+    useEffect(() => {
+        loadSuppliers()
+    }, [])
+
     return (
         <div>
             <SearchInput string="nome" onSearch={handleSearch}/>
@@ -48,7 +60,7 @@ function Fornecedores() {
                                 key={item.id} 
                                 nome={item.nome}
                                 cnpj={item.cnpj}
-                                tel={item.tel}
+                                tel={item.telefone}
                                 email={item.email}
                                 cep={item.cep}
                                 flag={1}

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemEstoque from "../components/ListItems/ItemEstoque.jsx";
-import SearchInput from "../components/SearchInput/SearchInput.jsx";
-import estoqueFakeList from "../static/estoqueFakeList.js";
+import SearchInput from "../components/SearchInputs/SearchInput.jsx";
+import { api } from "../services/api.js";
 
 function Estoque() {
+
+    const [stock, setStock] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -13,7 +15,7 @@ function Estoque() {
     const indexOfLastItem = currentPage * itensPerPage
     const indexOfFirstItem = indexOfLastItem - itensPerPage
     
-    const filteredItems = estoqueFakeList.filter((item) => item.nome.toLowerCase().includes(searchItem))
+    const filteredItems = stock.filter((item) => item.nome.toLowerCase().includes(searchItem))
     const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
 
     const totalPages = Math.ceil(filteredItems.length/itensPerPage)
@@ -27,6 +29,16 @@ function Estoque() {
         setCurrentPage(1)
     }
 
+    async function loadStock() {
+        const response = await api.get('estoque-atual-ingrediente')
+        console.log(response.data)
+        setStock(response.data)
+    }
+
+    useEffect(() => {
+        loadStock()
+    }, [])
+
     return (
         <div>
             <SearchInput string="nome" onSearch={handleSearch}/>
@@ -34,8 +46,8 @@ function Estoque() {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Valor</th>
                         <th>Quantidade</th>
+                        <th>Data de validade</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,8 +57,8 @@ function Estoque() {
                                 <ItemEstoque
                                 key={item.id} 
                                 nome={item.nome}
-                                valor={item.valor}
                                 quantidade={item.quantidade}
+                                data_validade={item.data_validade}
                                 flag={1}
                                 />
                             )

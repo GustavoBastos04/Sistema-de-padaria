@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemProduto from "../components/ListItems/ItemProduto.jsx";
-import SearchInput from "../components/SearchInput/SearchInput.jsx";
-import produtosFakeList from '../static/produtosFakeList.js'
+import SearchInput from "../components/SearchInputs/SearchInput.jsx";
+import { api } from "../services/api.js";
 
 function Produtos() {
+
+    const [products, setProducts] = useState([])
+    const [qtd, setQtd] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -13,7 +16,7 @@ function Produtos() {
     const indexOfLastItem = currentPage * itensPerPage
     const indexOfFirstItem = indexOfLastItem - itensPerPage
     
-    const filteredItems = produtosFakeList.filter((item) => item.nome.toLowerCase().includes(searchItem))
+    const filteredItems = products.filter((item) => item.nome.toLowerCase().includes(searchItem))
     const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem)
 
     const totalPages = Math.ceil(filteredItems.length/itensPerPage)
@@ -27,6 +30,37 @@ function Produtos() {
         setCurrentPage(1)
     }
 
+    async function loadProducts() {
+        const items = []
+        try {
+            const products = await api.get('produto'); // Supondo retorno com a propriedade `data`
+            const qtd = await api.get('produtos-restantes'); // Supondo retorno com a propriedade `data`
+    
+            if (Array.isArray(products.data) && Array.isArray(qtd.data)) {
+                products.data.forEach(item => {
+                    const found = qtd.data.find(({ nome }) => nome === item.nome);
+                    if (found) {
+                        const newItem = {
+                            nome: item.nome,
+                            valor: item.valor,
+                            quantidade: found.quantidade
+                        }
+                    items.push(newItem)
+                    }
+                });
+            } else {
+                console.error("products.data ou qtd.data não são arrays.");
+            }
+        } catch (error) {
+            console.error("Erro ao carregar dados:", error);
+        }
+        setProducts(items)
+    }
+
+    useEffect(() => {
+        loadProducts()
+    }, [])
+
     return (
         <div>
             <SearchInput string="nome" onSearch={handleSearch}/>
@@ -34,9 +68,8 @@ function Produtos() {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Valor</th>
+                        <th>Valor unitário</th>
                         <th>Quantidade</th>
-                        <th className="text-end">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
