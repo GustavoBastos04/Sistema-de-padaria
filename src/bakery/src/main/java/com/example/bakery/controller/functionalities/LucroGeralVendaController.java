@@ -4,6 +4,10 @@ import com.example.bakery.repositories.entities.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import com.example.bakery.dtos.functionalitiesdtos.LucroGeralVendaDTO;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("padaria")

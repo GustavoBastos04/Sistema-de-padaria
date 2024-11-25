@@ -1,8 +1,9 @@
 import { useState } from "react";
 import {Table, Button} from "react-bootstrap"
 import ItemPagamento from "../../components/ListItems/ItemPagamento.jsx";
-import SearchInput from "../../components/SearchInput/SearchInput.jsx";
+import SearchInput from "../../components/SearchInputs/SearchInput.jsx";
 import pagamentosFakeList from '../../static/pagamentosFakeList.js'
+import { PieChart } from '@mui/x-charts/PieChart'
 
 function HistoricoPagamentos() {
 
@@ -28,42 +29,22 @@ function HistoricoPagamentos() {
     }
 
     return (
-        <div>
-            <SearchInput string="forma de pagamento" onSearch={handleSearch}/>
-            <Table className="striped bordered hover">
-                <thead>
-                    <tr>
-                        <th>CPF do cliente</th>
-                        <th>Forma de pagamento</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div className="d-flex justify-content-center align-items-center">
+            <PieChart
+            series={[
                 {
-                    currentItems.map((item) => {
-                            return(
-                                <ItemPagamento
-                                key={item.id} 
-                                cpf_cliente={item.cpf_cliente}
-                                forma={item.forma}
-                                flag={1}
-                                />
-                            )
-                        })
-                    }
-                </tbody>
-            </Table>
-            <div className="pagination d-flex justify-content-center align-itens-center">
-                    {Array.from({length: totalPages}, (_, index) => (
-                        <Button
-                        key={index+1}
-                        onClick={() => handlePageChange(index+1)}
-                        variant={currentPage === index + 1 ? "primary" : "outline-primary"}
-                        className="m-1"
-                        >
-                            {index+1}
-                        </Button>
-                    ))}
-            </div>
+                data: [
+                    { id: 0, value: 5, label: 'Pix' },
+                    { id: 1, value: 5, label: 'Cartão de crédito' },
+                    { id: 2, value: 3, label: 'Dinheiro' },
+                    { id: 3, value: 3, label: 'V.A (Vale Alimentação)' },
+                    { id: 4, value: 4, label: 'Cartão de débito' },
+                ],
+                },
+            ]}
+            width={800}
+            height={400}
+            />
         </div>
     )
 }

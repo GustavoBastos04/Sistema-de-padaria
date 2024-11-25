@@ -11,6 +11,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.8",
+    "@mui/x-charts": "^7.22.3",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "date-fns": "^4.1.0",
@@ -34,5 +38,9 @@
     "globals": "^15.11.0",
     "rimraf": "^6.0.1",
     "vite": "^5.4.10"
+  },
+  "peerDependencies": {
+  "react": "^17.0.0 || ^18.0.0",
+  "react-dom": "^17.0.0 || ^18.0.0"
   }
 }

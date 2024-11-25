@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemVenda from "../../components/ListItems/ItemVenda.jsx";
-import SearchInput from "../../components/SearchInput/SearchInput.jsx";
+import SearchInput from "../../components/SearchInputs/SearchInput.jsx";
 import vendasFakeList from '../../static/vendasFakeList.js'
 
 

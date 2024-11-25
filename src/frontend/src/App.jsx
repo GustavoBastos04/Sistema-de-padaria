@@ -17,21 +17,23 @@ import CadastroProduto from './pages/Cadastros/CadastroProduto.jsx'
 
 function App() {
     return (
-        <Router>
-            <MainNavbar />
-            <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/produtos" element={<Produtos />} />
-                <Route path="/estoque" element={<Estoque />} />
-                <Route path="/clientes" element={<Clientes />} />
-                <Route path="/fornecedores" element={<Fornecedores />} />
-                <Route path="/pagamentos" element={<HistoricoPagamentos />} />
-                <Route path="/vendas" element={<HistoricoVendas />} />
-                <Route path="/cliente" element={<CadastroCliente />} />
-                <Route path="/fornecedor" element={<CadastroFornecedor />} />
-                <Route path="/produto" element={<CadastroProduto />} />
-            </Routes>
-        </Router>
+        <div className='w-100 min-vh-100'>
+            <Router>
+                <MainNavbar />
+                <Routes>
+                    <Route path="/" element={<Homepage />} />
+                    <Route path="/produtos" element={<Produtos />} />
+                    <Route path="/estoque" element={<Estoque />} />
+                    <Route path="/clientes" element={<Clientes />} />
+                    <Route path="/fornecedores" element={<Fornecedores />} />
+                    <Route path="/pagamentos" element={<HistoricoPagamentos />} />
+                    <Route path="/vendas" element={<HistoricoVendas />} />
+                    <Route path="/cliente" element={<CadastroCliente />} />
+                    <Route path="/fornecedor" element={<CadastroFornecedor />} />
+                    <Route path="/produto" element={<CadastroProduto />} />
+                </Routes>
+            </Router>
+        </div>
     )
 }
 

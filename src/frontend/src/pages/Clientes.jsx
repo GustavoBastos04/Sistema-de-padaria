@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {Table, Button} from "react-bootstrap";
 import ItemCliente from "../components/ListItems/ItemCliente.jsx";
-import SearchInput from "../components/SearchInput/SearchInput.jsx";
+import SearchInput from "../components/SearchInputs/SearchInput.jsx";
 import { api } from "../services/api.js";
 
 function Clientes() {
