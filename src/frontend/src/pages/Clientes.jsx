@@ -30,9 +30,37 @@ function Clientes() {
     }
 
     async function loadClients() {
-        const response = await api.get("desconto-cliente")
-        console.log(response.data)
-        setClients(response.data)
+        const items = []
+        try {
+            const clients = await api.get('cliente')
+            const spents = await api.get('desconto-cliente')
+
+            console.log(clients, spents)
+    
+            if (Array.isArray(clients.data) && Array.isArray(spents.data)) {
+                clients.data.forEach(item => {
+                    const found = spents.data.find(({cpf}) => cpf === item.cpf)
+                    if (found) {
+                        const newItem = {
+                            nome: item.nome,
+                            tipo_de_assinatura: item.tipo_de_assinatura,
+                            telefone: item.telefone,
+                            email: item.email,
+                            cep: item.cep,
+                            total_gasto: found.total_gasto,
+                            desconto: found.desconto,
+                            total_com_desconto: found.total_com_desconto,
+                        }
+                        items.push(newItem)
+                    }
+                })
+            } else {
+                console.error("products.data ou qtd.data não são arrays.")
+            }
+        } catch (error) {
+            console.error("Erro ao carregar dados:", error)
+        }
+        setClients(items)
     }
 
     useEffect(() => {
@@ -46,7 +74,10 @@ function Clientes() {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>CPF</th>
+                        <th>Tipo de assinatura</th>
+                        <th>Telefone</th>
+                        <th>E-mail</th>
+                        <th>CEP</th>
                         <th>Total gasto</th>
                         <th>Desconto</th>
                         <th>Total gasto com desconto</th>
@@ -57,12 +88,15 @@ function Clientes() {
                     currentItems.map((item) => {
                             return(
                                 <ItemCliente
-                                key={item.id} 
+                                key={`${item.nome}-${item.email}-${item.cep}`} 
                                 nome={item.nome}
-                                cpf={item.cpf}
-                                total={item.total_gasto}
+                                tipo_de_assinatura={item.tipo_de_assinatura}
+                                telefone={item.telefone}
+                                email={item.email}
+                                cep={item.cep}
+                                total_gasto={item.total_gasto}
                                 desconto={item.desconto}
-                                total_c_desconto={item.total_com_desconto}
+                                total_com_desconto={item.total_com_desconto}
                                 flag={1}
                                 />
                             )

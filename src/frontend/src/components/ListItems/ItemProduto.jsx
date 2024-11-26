@@ -12,12 +12,17 @@ function ItemProduto(props){
         setShow(!show)
     }
 
+    const formatCurrency = (value) => {
+        const formattedValue = Math.abs(value).toFixed(2).replace('.', ',');
+        return value < 0 ? `- R$${formattedValue}` : `R$${formattedValue}`;
+    }
+
     return (
         <>
-            <ProfitModal show={show} onClose={handleChange} props={props}/>
+            <ProfitModal show={show} onClose={handleChange} productID={props.id}/>
             <tr>
                 <td>{props.nome}</td>
-                <td>R${props.valor}</td>
+                <td>{formatCurrency(props.valor)}</td>
                 <td>{props.quantidade}</td>
                 <td className="text-end">
                     { props.flag === 1 && (
@@ -35,7 +40,8 @@ ItemProduto.propTypes = {
     nome: PropTypes.string.isRequired,
     valor: PropTypes.number.isRequired,
     quantidade: PropTypes.number.isRequired,
-    flag: PropTypes.number.isRequired
+    flag: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
 }
 
 export default ItemProduto;

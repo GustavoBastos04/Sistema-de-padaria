@@ -7,7 +7,6 @@ import { api } from "../services/api.js"
 function Produtos() {
 
     const [products, setProducts] = useState([])
-    const [info, setInfo] = useState([])
 
     const [currentPage, setCurrentPage] = useState(1)
     const [searchItem, setSearchItem] = useState("")
@@ -38,21 +37,22 @@ function Produtos() {
     
             if (Array.isArray(products.data) && Array.isArray(qtd.data)) {
                 products.data.forEach(item => {
-                    const found = qtd.data.find(({ nome }) => nome === item.nome);
+                    const found = qtd.data.find(({nome}) => nome === item.nome)
                     if (found) {
                         const newItem = {
+                            id: item.id_produto,
                             nome: item.nome,
                             valor: item.valor,
                             quantidade: found.quantidade
                         }
                         items.push(newItem)
                     }
-                });
+                })
             } else {
-                console.error("products.data ou qtd.data não são arrays.");
+                console.error("products.data ou qtd.data não são arrays.")
             }
         } catch (error) {
-            console.error("Erro ao carregar dados:", error);
+            console.error("Erro ao carregar dados:", error)
         }
         setProducts(items)
     }
@@ -77,7 +77,8 @@ function Produtos() {
                         currentItems.map((item) => {
                             return(
                                 <ItemProduto
-                                key={item.id} 
+                                key={item.id}
+                                id={item.id}
                                 nome={item.nome} 
                                 valor={item.valor}
                                 quantidade={item.quantidade}
