@@ -2,8 +2,12 @@
     color: red;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+body.light {
+    background-color: #FFF;
+    color: #000;
+}
+
+body.dark {
+    background-color: #343a40;
+    color: #FFF;
 }

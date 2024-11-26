@@ -1,11 +1,17 @@
+import React from "react"
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Button } from "react-bootstrap"
+import { useTheme } from '../../ThemeContext'
 
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"
 
 function MainNavbar() {
+
+    const {theme, toggleTheme} = useTheme()
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -29,6 +35,7 @@ function MainNavbar() {
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
+                <Button className="bg-transparent border-0" onClick={toggleTheme}> {theme === 'light' ? '🌕' : '☀️'} </Button>
             </Container>
         </Navbar>
     )

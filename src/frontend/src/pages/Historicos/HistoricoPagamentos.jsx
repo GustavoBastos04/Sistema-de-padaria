@@ -1,3 +1,4 @@
+import React from "react"
 import { Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { PieChart } from '@mui/x-charts/PieChart'

@@ -1,3 +1,4 @@
+import React from "react"
 import PropTypes from 'prop-types'
 import { Modal, Card } from 'react-bootstrap'
 import { api } from '../../services/api'

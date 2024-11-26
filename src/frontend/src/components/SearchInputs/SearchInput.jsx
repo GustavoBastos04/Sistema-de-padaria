@@ -1,3 +1,4 @@
+import React from "react"
 import {Form, InputGroup} from "react-bootstrap"
 import {CiSearch} from "react-icons/ci";
 import PropTypes from "prop-types";

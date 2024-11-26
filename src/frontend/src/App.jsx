@@ -1,6 +1,8 @@
+import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { useTheme, ThemeProvider } from './ThemeContext.jsx'
 
 import MainNavbar from './components/Navbar/MainNavbar.jsx'
 import Homepage from './pages/Homepage.jsx'
@@ -14,14 +16,20 @@ import CadastroCliente from "./pages/Cadastros/CadastroCliente.jsx"
 import CadastroFornecedor from "./pages/Cadastros/CadastroFornecedor.jsx"
 import CadastroProduto from './pages/Cadastros/CadastroProduto.jsx'
 
-
 function App() {
+
+    const {theme} = useTheme()
+
+    React.useEffect(() => {
+        document.body.className = theme
+    }, [theme])
+
     return (
         <div className='w-100 min-vh-100'>
             <Router>
                 <MainNavbar />
                 <Routes>
-                    <Route path="/" element={<Homepage />} />
+                    <Route path="/" element={<Homepage />}/>
                     <Route path="/produtos" element={<Produtos />} />
                     <Route path="/estoque" element={<Estoque />} />
                     <Route path="/clientes" element={<Clientes />} />
@@ -37,4 +45,10 @@ function App() {
     )
 }
 
-export default App
+export default function AppWrapper() {
+    return(
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    )
+}
