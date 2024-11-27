@@ -14,13 +14,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("padaria")
-public class CustomIngredienteProximoExpirarController {
+public class IngredienteProximoExpirarController {
 
     @Autowired
     IngredienteRepository ingredienteRepository;
 
     @GetMapping("ingrediente-proximo-expirar")
-    public List<ConsultaEstoqueIngredienteDTO> getIngredienteProximoExpirar(@RequestParam String format, @RequestParam Integer number){
+    public List<ConsultaEstoqueIngredienteDTO> getIngredientesProximoExp(@RequestParam String format, @RequestParam Integer number){
         LocalDate currentDate = LocalDate.now();
         Date date = Date.valueOf(currentDate);
         //Default give us inside 1 week
