@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("padaria")
-public class CustomIngredienteProximoExpirarController {
+public class IngredienteProximoExpirarController {
 
     @Autowired
     IngredienteRepository ingredienteRepository;
