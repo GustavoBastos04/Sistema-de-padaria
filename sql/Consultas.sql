@@ -1,6 +1,6 @@
 SET search_path TO Padaria, public;
 
--- Desconto para Cliente Cadastrado
+-- Desconto para Cliente Cadastrado de acordo com seu tipo de assinatura
 SELECT 
     c.nome,
     c.cpf,
