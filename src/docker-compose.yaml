@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: meu_postgres_db
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}  
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}  
+      - POSTGRES_DB=${POSTGRES_DB}        
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./bakery  
+    container_name: bakery_app
+    restart: on-failure
+    ports:
+      - "${BACKEND_PORT}:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  frontend:
+    build: ./frontend
+    container_name: react_app
+    restart: on-failure
+    ports:
+      - "${FRONTEND_PORT}:80"
+    depends_on:
+      - backend
+
+volumes:
+  # Define o volume nomeado para persistência dos dados do Postgres
+  pgdata:

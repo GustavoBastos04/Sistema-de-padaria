@@ -31,13 +31,20 @@ Sistema de padaria que registra assinaturas de clientes (que permitem descontos 
 ## ✏️ Requisito de dados: 
 Uma padaria quer construir um sistema para armazenar informações pertinentes para melhorar os processos do negócio e a lucratividade. O cliente cadastrado no sistema da padaria possui o atributo de CPF como principal identificador, além do seu nome, número de telefone, e-mail e a informação composta de seu endereço. Esse cliente compra um produto, que possui um identificador único, nome, valor unitário e quantidade disponível nas prateleiras do estabelecimento. O produto consome os ingredientes estocados, dados por um identificador único, nome, quantidade disponível, valor unitário, validade e marca. O produto é constituído por ingredientes de uma receita, com a quantidade de cada produto. O cliente então realiza um pagamento, caracterizado pelo seu formato, e esse pagamento é com base no valor de uma venda. Uma venda possui um identificador único, valor total e data de processamento da venda. A venda é constituída por um item de venda, gerado com base no produto.
 
+## Exemplo de Telas:
+
+### Listagem de Fornecedores
+![Listagem de Fornecedores](./lib/telas/registro_de_fornecedores.png)
+
+### Cadastro de Fornecedores
+![Cadastro de Fornecedores](./lib/telas/cadatro_de_fornecedores.png)
+
 ## Tutorial para uso:
 <ul>
-<li>no Postgres, criar database "padaria"</li>
-<li>Criação das tuplas exatamente como <a href="./sql/Sistema_Padaria.sql">Sistema_Padaria.sql</a></li>
-<li>Criação das tuplas exatamente como <a href="./sql/Insercao_Tuplas.sql">Insercao_Tuplas.sql</a></li>
-<li>Em Sistema-de-padaria/src/bakery/src/main/resources/application.properties, deve estar <a href="./sql/application-properties.txt">Desse jeito</a></li>
-<li>Agora é só dar run no projeto!</li>
+<li>Acessar o diretório <i>./sistema-de-padaria/src</i>, ou onde o arquivo <i>docker-compose.yaml</i> está presente</li>
+<li>Definir portas e acesso ao banco de dados em um arquivo <i>.env</i>, como na estrutura do arquivo <i>.env.example</i></li>
+<li>Com o docker instalado, digitar: <i>docker compose up -d --build</i></li>
+<li>Acessar <i>http://localhost:3000/</i></li>
 </ul>
 
 ## GETs e POSTs:
@@ -58,13 +65,6 @@ Uma padaria quer construir um sistema para armazenar informações pertinentes p
 <li>ingrediente-proximo-expirar?format=&days= [GET] - format = {days, weeks, months} e number={1,2,3,4,...}</li>
 <li>ingrediente-vencido [GET]</li>
 <li>lucro-determinado-periodo?begin=&end= [GET] - begin e end devem ter valores na conveção java.sql.Date: yyyy-mm-dd</li>
-</ul>
-
-## Importante:
-<ul>
-<li>Siga <strong>estritamente</strong> as intruções indicadas, a aplicação é muito sensível a alteração de nomes de banco de dados, relações e atributos</li>
-<li>GET e POSTs devem ser devolvidos em JSON. Esteja ciente ao resgatar dados e principalmente ao inserir</li>
-<li>Algumas funcionalidades estão indisponíveis no momento dado que o banco de dados está em fase de alterações</li>
 </ul>
 
 
